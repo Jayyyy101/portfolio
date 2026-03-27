@@ -1,3 +1,4 @@
+import { ContactRail } from "@/components/portfolio/ContactRail";
 import { AboutSection } from "@/components/portfolio/AboutSection";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { FeaturedWorkZ } from "@/components/portfolio/FeaturedWorkZ";
@@ -23,6 +24,7 @@ export function PortfolioPageClient({ data }: Props) {
 
   return (
     <div className="site">
+      <ContactRail />
       <SiteHeader />
       <div className="site-shell">
         <HeroSection
