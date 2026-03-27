@@ -1,6 +1,27 @@
 import { SectionTitle } from "@/components/portfolio/SectionTitle";
 import type { WritingCard, WritingGroup } from "@/types/portfolio";
 
+function MagnifyGlassIcon() {
+  return (
+    <svg
+      className="writing-card__magnify-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <circle cx="10.5" cy="10.5" r="6.75" stroke="currentColor" strokeWidth="1.65" />
+      <path
+        d="M15.2 15.2 21 21"
+        stroke="currentColor"
+        strokeWidth="1.65"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 type Props = {
   groups: WritingGroup[];
   /** Entire section is a placeholder until articles go live */
@@ -22,6 +43,14 @@ function WritingCardBlock({ card, preview }: { card: WritingCard; preview?: bool
         </span>
       </div>
       <p className="writing-card__desc">{card.description}</p>
+      {card.angle ? (
+        <p className="writing-card__angle">
+          <span className="writing-card__angle-start">
+            <MagnifyGlassIcon />
+          </span>
+          <span>{card.angle}</span>
+        </p>
+      ) : null}
     </>
   );
 
@@ -48,12 +77,12 @@ export function WritingAccordion({ groups, comingSoon }: Props) {
 
   if (!groups.length && comingSoon) {
     return (
-      <section id="writing" className="writing-section writing-section--preview">
-        <SectionTitle>Product Thinking &amp; Writing</SectionTitle>
+      <section id="articles" className="writing-section writing-section--preview">
+        <SectionTitle>Product Thinking &amp; Articles</SectionTitle>
         <div className="writing-section__soon">
-          <p className="writing-section__soon-label">Coming soon</p>
+          <p className="writing-section__soon-label">In the works</p>
           <p className="writing-section__soon-hint muted">
-            Long-form notes on product, growth, and automation — publishing here shortly.
+            Long-form notes on product, growth, and automation — I&apos;ll share them here when they&apos;re ready.
           </p>
         </div>
       </section>
@@ -62,15 +91,14 @@ export function WritingAccordion({ groups, comingSoon }: Props) {
 
   return (
     <section
-      id="writing"
+      id="articles"
       className={`writing-section${comingSoon ? " writing-section--preview" : ""}`}
       aria-busy={comingSoon ? "true" : undefined}
     >
-      <SectionTitle>Product Thinking &amp; Writing</SectionTitle>
+      <SectionTitle>Product Thinking &amp; Articles</SectionTitle>
       {comingSoon ? (
         <p className="writing-section__preview-lede muted">
-          <strong className="writing-section__preview-strong">Coming soon</strong> — drafts are in progress.
-          Below is a preview of themes and working titles so you know what&apos;s in the pipeline.
+          <strong className="writing-section__preview-strong">In the works</strong>— a few longer pieces are still taking shape. Stay tuned.
         </p>
       ) : null}
       <div className="writing-section__groups">

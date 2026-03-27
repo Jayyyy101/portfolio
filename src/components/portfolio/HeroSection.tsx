@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroTypingIntro } from "@/components/portfolio/HeroTypingIntro";
 
 type Props = {
   name: string;
@@ -10,6 +11,7 @@ export function HeroSection({ name, title, summary }: Props) {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-section__copy">
+        <HeroTypingIntro />
         <h1 className="hero-section__name">{name}</h1>
         <p className="hero-section__role">{title}</p>
         <p className="hero-section__summary">{summary}</p>

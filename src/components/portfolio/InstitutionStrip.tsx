@@ -7,10 +7,10 @@ export function InstitutionStrip() {
   return (
     <section className="institution-strip" aria-labelledby="institution-strip-heading">
       <h2 id="institution-strip-heading" className="institution-strip__title">
-        Where I&apos;ve studied &amp; certified
+        Education &amp; certifications
       </h2>
       <p className="institution-strip__subtitle">
-        Degrees and credentials from institutions and platforms that shaped how I build.
+        Degrees and programs that grounded my craft—and still inform how I frame problems, ship product, and grow systems.
       </p>
       <ul className="institution-strip__list">
         <li className="institution-strip__item">
@@ -55,7 +55,7 @@ export function InstitutionStrip() {
           </div>
           <div className="institution-strip__text">
             <span className="institution-strip__name">University of Delhi</span>
-            <span className="institution-strip__role">English Honours · Language &amp; literature</span>
+            <span className="institution-strip__role">B.A. English (Honours) · Research, writing &amp; analysis</span>
           </div>
         </li>
       </ul>

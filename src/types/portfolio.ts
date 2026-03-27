@@ -41,7 +41,7 @@ export type ExperienceItem = {
 };
 
 /** Pill colour on writing cards (aligned with featured badge palette). */
-export type WritingTagVariant = "lavender" | "mint" | "ice" | "sand";
+export type WritingTagVariant = "lavender" | "mint" | "ice" | "sand" | "rose";
 
 export type WritingCard = {
   id: string;
@@ -49,6 +49,8 @@ export type WritingCard = {
   tag: string;
   tagVariant: WritingTagVariant;
   description: string;
+  /** Optional angle line below the description (shown with a magnifying-glass icon) */
+  angle?: string;
   /** External article URL; omit when not published yet */
   href?: string;
 };
@@ -179,9 +181,9 @@ export type PortfolioData = {
   featuredStories?: FeaturedStory[];
   /** Smaller cards in “More projects” grid */
   moreProjects?: MoreProjectItem[];
-  /** Product thinking & writing — grouped cards (ignored when `writingComingSoon`) */
+  /** Product thinking & articles — grouped cards (ignored when `writingComingSoon`) */
   writing?: WritingGroup[];
-  /** When true, show a placeholder instead of writing cards */
+  /** When true, show a placeholder instead of article cards */
   writingComingSoon?: boolean;
   /** Licenses & certifications */
   certifications?: CertificationItem[];

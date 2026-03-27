@@ -578,78 +578,153 @@ export const localPortfolioData: PortfolioData = {
       logoVariant: "iit",
     },
   ],
-  writingComingSoon: true,
+  writingComingSoon: false,
   writing: [
     {
-      id: "wg-ai",
-      heading: "AI & automation",
+      id: "wg-ai-future",
+      heading: "AI & The Future of Work",
       cards: [
         {
-          id: "w-linkedin-agent",
-          title: "I built an AI agent to run my LinkedIn. Here's what actually happened.",
+          id: "w-saas-india",
+          title: "India's SaaS is dying. AI-native products are what comes next.",
           tag: "AI",
           tagVariant: "lavender",
           description:
-            "Not a tutorial. The real story — what worked, what broke, and what it taught me about automation that no course will tell you.",
+            "1,803 enterprise tech startups shut down in India between 2023-25. The ones surviving are AI-first. This is a real, urgent conversation.",
+          angle:
+            "What does an AI-native product actually look like from the inside — having built one.",
         },
         {
-          id: "w-n8n-2am",
-          title: "Why your n8n workflow breaks at 2am — and how to fix it before it does",
-          tag: "Automation",
-          tagVariant: "lavender",
-          description:
-            "The unglamorous side of agentic systems — failure modes, guardrails, and hard lessons from shipping real workflows.",
-        },
-      ],
-    },
-    {
-      id: "wg-product",
-      heading: "Product & marketplaces",
-      cards: [
-        {
-          id: "w-taxonomy-1k",
-          title:
-            "How I built a taxonomy for 1000+ AI tools — and why it matters more than the product itself",
+          id: "w-ai-discovery",
+          title: "Everyone is building AI tools. Nobody is building AI discovery.",
           tag: "Product",
-          tagVariant: "mint",
-          description:
-            "Discovery is a product decision. The structure behind ThatsMyAI and why most aggregators get this completely wrong.",
-        },
-        {
-          id: "w-0-250-dau",
-          title: "0 to 250 daily users in a month — what we did and what we'd never do again",
-          tag: "Growth",
-          tagVariant: "mint",
-          description:
-            "The honest version of an early traction story. No vanity metrics, no fundraising spin.",
-        },
-      ],
-    },
-    {
-      id: "wg-seo",
-      heading: "SEO & growth",
-      cards: [
-        {
-          id: "w-500k-visits",
-          title: "500,000 extra monthly visits. The content strategy behind it.",
-          tag: "SEO",
           tagVariant: "ice",
           description:
-            "How a team of 7 moved the needle on organic traffic at Tractor Junction — and the framework that made every piece of content count.",
+            "The market is flooded with AI tools but finding the right one is still broken. You literally built the solution to this problem.",
+          angle:
+            "Why discovery is a product problem, not a search problem — from someone who architected it.",
         },
       ],
     },
     {
       id: "wg-edtech",
-      heading: "EdTech & adaptive learning",
+      heading: "EdTech & Adaptive Learning",
       cards: [
         {
-          id: "w-grovita-stuck",
-          title: "Designing an AI that knows where a student is stuck before they do",
+          id: "w-edtech-failed",
+          title: "2,150 EdTech startups failed in India. Here's the product mistake they all made.",
           tag: "EdTech",
           tagVariant: "sand",
           description:
-            "The logic behind Grovita's three-tier rule engine — and what building it taught me about the difference between teaching and adapting.",
+            "EdTech funding collapsed 56% YoY. Most platforms pushed content, not personalisation. Grovita's approach was the opposite.",
+          angle:
+            "The difference between a platform that teaches and one that actually adapts — and why it matters for survival.",
+        },
+        {
+          id: "w-jee-system",
+          title: "Why JEE students don't need more content. They need a system that listens.",
+          tag: "EdTech",
+          tagVariant: "sand",
+          description:
+            "Physics Wallah is thriving while Byju's collapsed. The difference? Understanding what students actually need vs what looks good on a pitch deck.",
+          angle:
+            "The Grovita rule engine — and what designing it taught you about real learning vs content delivery.",
+        },
+      ],
+    },
+    {
+      id: "wg-growth-seo",
+      heading: "Growth & SEO in the AI Era",
+      cards: [
+        {
+          id: "w-seo-dead",
+          title: "SEO isn't dead. But the way you've been doing it is.",
+          tag: "Growth",
+          tagVariant: "ice",
+          description:
+            "AI-generated content is flooding search. Organic strategies built on volume are collapsing. Intent-led SEO is the only thing left standing.",
+          angle:
+            "How the SEO-first strategy at Tractor Junction — 500K+ extra monthly visits — would be built differently today with AI.",
+        },
+        {
+          id: "w-fintech-users",
+          title: "Fintech is India's most funded sector. And nobody knows how to talk to their users.",
+          tag: "Fintech",
+          tagVariant: "mint",
+          description:
+            "Fintech raised $1.6B in India in H1 2025 — yet user trust and engagement remain broken. Your resume says you're headed into fintech. This stakes your claim early.",
+          angle:
+            "What aggregator and marketplace thinking can teach fintech about discovery, onboarding, and conversion.",
+        },
+      ],
+    },
+    {
+      id: "wg-creator-social",
+      heading: "Creator Economy & Social Commerce",
+      cards: [
+        {
+          id: "w-creator-8pct",
+          title:
+            "Only 8% of Indian creators make money. The other 92% have a product problem.",
+          tag: "Creator Economy",
+          tagVariant: "rose",
+          description:
+            "India has 100M+ creators but monetisation remains broken — discovery, taxonomy, conversion. Sound familiar? You literally built a platform to solve this in a different category.",
+          angle:
+            "What ThatsMyAI's discovery architecture taught you about why creator monetisation is falling — and what the fix looks like.",
+        },
+        {
+          id: "w-linkedin-brands",
+          title: "Every brand wants a LinkedIn presence. Almost none of them have a strategy.",
+          tag: "Social Commerce",
+          tagVariant: "rose",
+          description:
+            "3 in 4 D2C brands now use creators for growth but most treat it like an afterthought — no system, no consistency, no automation.",
+          angle:
+            "What building a LinkedIn AI agent taught you about the difference between showing up and actually being present.",
+        },
+      ],
+    },
+    {
+      id: "wg-qcommerce-d2c",
+      heading: "Quick Commerce & D2C",
+      cards: [
+        {
+          id: "w-qcommerce-discovery",
+          title:
+            "India's Q-commerce market is worth ₹64,000 crore. Nobody is thinking about the discovery problem.",
+          tag: "Q-Commerce",
+          tagVariant: "sand",
+          description:
+            "Blinkit, Zepto, Instamart are racing on speed. But how users find products inside these platforms is still broken. It's a taxonomy and UX problem dressed up as a logistics problem.",
+          angle:
+            "Why the next battleground in quick commerce isn't 10-minute delivery — it's 10-second discovery.",
+        },
+        {
+          id: "w-d2c-roas",
+          title: "D2C brands are spending more on ads and getting less back. Here's the real problem.",
+          tag: "D2C",
+          tagVariant: "sand",
+          description:
+            "ROAS on Meta and Google is falling sharply. CAC in Delhi NCR is 50% above other metros. Yet most brands keep pouring money in instead of fixing the funnel.",
+          angle:
+            "What conversion optimisation from Tractor Junction's 3.2M monthly visitors taught you about where D2C brands are actually leaking.",
+        },
+      ],
+    },
+    {
+      id: "wg-marketplaces",
+      heading: "Marketplaces & Aggregators",
+      cards: [
+        {
+          id: "w-aggregators-fail",
+          title: "Why most aggregators fail at the one thing they exist to do",
+          tag: "Marketplaces",
+          tagVariant: "mint",
+          description:
+            "Aggregators promise to simplify choice. Most add to the noise instead. The difference is almost always information architecture — the thing nobody talks about.",
+          angle:
+            "From Tractor Junction to ThatsMyAI — what two very different aggregators taught you about the anatomy of good discovery.",
         },
       ],
     },
