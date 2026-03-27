@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#0d0d0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <rect x="40" y="40" width="720" height="36" rx="6" fill="#2a2a2a" stroke="#d4af37" stroke-opacity="0.35"/>
+  <rect x="40" y="100" width="220" height="340" rx="8" fill="#141414" stroke="#333"/>
+  <rect x="280" y="100" width="480" height="48" rx="6" fill="#1f1f1f"/>
+  <rect x="280" y="170" width="480" height="24" rx="4" fill="#262626"/>
+  <rect x="280" y="210" width="360" height="24" rx="4" fill="#262626"/>
+  <rect x="280" y="250" width="480" height="120" rx="8" fill="#141414" stroke="#2a2a2a"/>
+  <text x="400" y="475" text-anchor="middle" fill="#d4af37" font-family="system-ui,sans-serif" font-size="14" opacity="0.7">Discovery &amp; taxonomy — placeholder visual</text>
+</svg>

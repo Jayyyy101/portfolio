@@ -1,0 +1,5 @@
+Drop your latest resume PDF here as:
+
+  resume.pdf
+
+Overwrite this file whenever you update your resume. The site links to it via /resume/resume.pdf (see src/lib/site.ts).
