@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { RESUME_PATH } from "@/lib/site";
 
 type Props = {
   name: string;
@@ -14,14 +13,9 @@ export function HeroSection({ name, title, summary }: Props) {
         <h1 className="hero-section__name">{name}</h1>
         <p className="hero-section__role">{title}</p>
         <p className="hero-section__summary">{summary}</p>
-        <div className="hero-section__ctas">
-          <a className="btn-gold-outline" href="#about">
-            Read more
-          </a>
-          <a className="btn-gold-ghost" href={RESUME_PATH} download>
-            Download resume
-          </a>
-        </div>
+        <a className="btn-gold-outline" href="#about">
+          Read more
+        </a>
       </div>
       <div className="hero-section__photo-wrap">
         <div className="hero-section__photo-frame">
