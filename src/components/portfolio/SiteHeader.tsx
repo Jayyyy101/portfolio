@@ -9,10 +9,11 @@ export function SiteHeader() {
       <nav className="site-header__nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#featured">Work</a>
-        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
         <a href="#writing">Writing</a>
         <a href="#contact">Contact</a>
-        <a className="site-header__resume" href={RESUME_PATH} download>
+        <a className="btn-gold-outline site-header__resume" href={RESUME_PATH} download>
           Resume
         </a>
       </nav>

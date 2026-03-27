@@ -9,8 +9,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Jayita Sharma | Product & Growth",
-  description: "Product & Growth portfolio — marketplace platforms, discovery UX, and AI automation.",
+  title: "Jayita Sharma | Product & Growth Strategist",
+  description:
+    "Product & Growth Strategist — marketplace platforms, discovery UX, and AI automation.",
 };
 
 export default function RootLayout({

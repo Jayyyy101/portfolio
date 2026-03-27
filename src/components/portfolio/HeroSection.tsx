@@ -22,8 +22,8 @@ export function HeroSection({ name, title, summary }: Props) {
           <Image
             src="/profile-jayita.png"
             alt="Jayita Sharma"
-            width={480}
-            height={600}
+            width={800}
+            height={800}
             className="hero-section__photo"
             priority
           />

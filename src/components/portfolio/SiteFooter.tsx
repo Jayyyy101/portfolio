@@ -5,13 +5,13 @@ export function SiteFooter() {
     <footer id="contact" className="site-footer">
       <h2 className="site-footer__title">Get In Touch</h2>
       <p className="site-footer__lead">
-        Open to product and growth roles in marketplace and AI platforms.
+        Have something in mind — a role, a project, or just a conversation? I&apos;d love to hear from you.
       </p>
       <div className="site-footer__actions">
         <a className="site-footer__hello" href="mailto:jayitasharma111@gmail.com">
           Say hello
         </a>
-        <a className="site-footer__resume" href={RESUME_PATH} download>
+        <a className="btn-gold-outline" href={RESUME_PATH} download>
           Download resume
         </a>
       </div>

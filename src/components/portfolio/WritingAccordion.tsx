@@ -1,43 +1,93 @@
 import { SectionTitle } from "@/components/portfolio/SectionTitle";
-import type { WritingItem } from "@/types/portfolio";
+import type { WritingCard, WritingGroup } from "@/types/portfolio";
 
 type Props = {
-  items: WritingItem[];
+  groups: WritingGroup[];
+  /** Entire section is a placeholder until articles go live */
+  comingSoon?: boolean;
 };
 
-export function WritingAccordion({ items }: Props) {
-  if (!items.length) return null;
+function WritingCardBlock({ card, preview }: { card: WritingCard; preview?: boolean }) {
+  const inner = (
+    <>
+      <div className="writing-card__head">
+        <h4 className="writing-card__title">{card.title}</h4>
+        <span className="writing-card__head-tags">
+          <span className={`writing-card__tag writing-card__tag--${card.tagVariant}`}>{card.tag}</span>
+          {preview ? (
+            <span className="writing-card__soon-badge" title="Link goes live when published">
+              Soon
+            </span>
+          ) : null}
+        </span>
+      </div>
+      <p className="writing-card__desc">{card.description}</p>
+    </>
+  );
+
+  const cardClass = `writing-card writing-card--static${preview ? " writing-card--preview" : ""}`;
+
+  if (card.href && !preview) {
+    return (
+      <a
+        href={card.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="writing-card writing-card--link"
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return <article className={cardClass}>{inner}</article>;
+}
+
+export function WritingAccordion({ groups, comingSoon }: Props) {
+  if (!groups.length && !comingSoon) return null;
+
+  if (!groups.length && comingSoon) {
+    return (
+      <section id="writing" className="writing-section writing-section--preview">
+        <SectionTitle>Product Thinking &amp; Writing</SectionTitle>
+        <div className="writing-section__soon">
+          <p className="writing-section__soon-label">Coming soon</p>
+          <p className="writing-section__soon-hint muted">
+            Long-form notes on product, growth, and automation — publishing here shortly.
+          </p>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <section id="writing" className="writing-section">
+    <section
+      id="writing"
+      className={`writing-section${comingSoon ? " writing-section--preview" : ""}`}
+      aria-busy={comingSoon ? "true" : undefined}
+    >
       <SectionTitle>Product Thinking &amp; Writing</SectionTitle>
-      <div className="writing-accordion" role="list">
-        {items.map((item) =>
-          item.href ? (
-            <a
-              key={item.id}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="writing-accordion__row writing-accordion__row--link"
-            >
-              <span className="writing-accordion__title">{item.title}</span>
-              <span className="writing-accordion__chevron" aria-hidden>
-                ↗
-              </span>
-            </a>
-          ) : (
-            <div key={item.id} className="writing-accordion__row writing-accordion__row--soon">
-              <span className="writing-accordion__title">{item.title}</span>
-              <span className="writing-accordion__badge">Soon</span>
+      {comingSoon ? (
+        <p className="writing-section__preview-lede muted">
+          <strong className="writing-section__preview-strong">Coming soon</strong> — drafts are in progress.
+          Below is a preview of themes and working titles so you know what&apos;s in the pipeline.
+        </p>
+      ) : null}
+      <div className="writing-section__groups">
+        {groups.map((group) => (
+          <div key={group.id} className="writing-section__group">
+            <div className="writing-section__group-head">
+              <h3 className="writing-section__group-title">{group.heading}</h3>
+              <span className="writing-section__group-line" aria-hidden />
             </div>
-          )
-        )}
+            <div className="writing-cards">
+              {group.cards.map((card) => (
+                <WritingCardBlock key={card.id} card={card} preview={comingSoon} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      <p className="writing-section__note muted">
-        Add URLs in <code>src/data/localPortfolio.ts</code> under each writing item&apos;s{" "}
-        <code>href</code>.
-      </p>
     </section>
   );
 }

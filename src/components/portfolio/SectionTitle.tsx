@@ -13,8 +13,10 @@ export function SectionTitle({ id, children, line = true }: Props) {
     );
   }
   return (
-    <div className="section-title" id={id}>
-      <h2 className="section-title__text">{children}</h2>
+    <div className="section-title">
+      <h2 className="section-title__text" id={id}>
+        {children}
+      </h2>
       <span className="section-title__line" aria-hidden />
     </div>
   );
