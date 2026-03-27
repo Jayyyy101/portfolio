@@ -1,12 +1,12 @@
 :root {
   color-scheme: dark;
-  --bg: #070b14;
+  --bg: #080d18;
   --bg-soft: #0f1728;
   --panel: #121c31;
-  --panel-2: #0c1424;
-  --text: #ecf1ff;
-  --muted: #aab7d8;
-  --line: #233659;
+  --panel-2: #0d1628;
+  --text: #eef3ff;
+  --muted: #b5c2de;
+  --line: #2a3e63;
   --accent: #6ea8ff;
   --accent-2: #8ef7cf;
 }
@@ -19,11 +19,12 @@ body {
   margin: 0;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(110, 168, 255, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 90% 0%, rgba(142, 247, 207, 0.12), transparent 55%),
+    radial-gradient(1200px 600px at 10% -10%, rgba(110, 168, 255, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(142, 247, 207, 0.08), transparent 55%),
     var(--bg);
   color: var(--text);
-  line-height: 1.55;
+  line-height: 1.65;
+  font-size: 17px;
 }
 
 a {
@@ -31,9 +32,10 @@ a {
 }
 
 .container {
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 28px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 24px clamp(16px, 3.6vw, 52px) 40px;
 }
 
 .top-nav {
@@ -44,7 +46,7 @@ a {
   background: rgba(7, 11, 20, 0.72);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,13 +56,13 @@ a {
 .nav-links {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 5px 10px;
@@ -73,25 +75,25 @@ a {
 
 .card {
   border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 20px;
-  background: linear-gradient(180deg, rgba(18, 28, 49, 0.96), rgba(12, 20, 36, 0.96));
-  box-shadow: 0 12px 26px rgba(2, 7, 18, 0.38);
+  border-radius: 18px;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(17, 27, 46, 0.94), rgba(13, 22, 40, 0.96));
+  box-shadow: 0 6px 18px rgba(2, 7, 18, 0.28);
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .card:hover {
   transform: translateY(-1px);
-  border-color: #3a568a;
+  border-color: #46679f;
 }
 
 .grid {
   display: grid;
-  gap: 16px;
+  gap: 20px;
 }
 
 .grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .muted {
@@ -125,36 +127,47 @@ select {
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 4.4vw, 4rem);
   line-height: 1.1;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 h2 {
-  font-size: 1.45rem;
-  margin: 0 0 12px;
+  font-size: 1.75rem;
+  margin: 0 0 14px;
 }
 
 h3 {
-  font-size: 1.1rem;
-  margin: 0 0 8px;
+  font-size: 1.2rem;
+  margin: 0 0 10px;
 }
 
 .hero {
-  padding: 30px 24px;
+  padding: 28px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 18px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 22px;
 }
 
 .hero-side {
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 14px;
-  background: rgba(10, 16, 28, 0.6);
+  background: rgba(10, 16, 28, 0.55);
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #3a5481;
+  background: #0b1220;
 }
 
 .hero-tag {
@@ -170,11 +183,14 @@ h3 {
 .stat-tile {
   border-left: 3px solid var(--accent);
   font-weight: 600;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
 }
 
 .section-shell {
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 
 .project-card {
@@ -244,8 +260,72 @@ h3 {
   justify-content: space-between;
 }
 
+.section-shell p,
+.hero p {
+  max-width: 78ch;
+}
+
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .hero {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 12px 12px 20px;
+  }
+
+  .top-nav {
+    position: static;
+    gap: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 14px;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+    font-size: 0.84rem;
+    padding: 4px 9px;
+  }
+
+  .grid {
+    gap: 14px;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .timeline-item {
+    margin-left: 16px;
+  }
+
+  .timeline-item:before {
+    left: -14px;
+  }
+
+  .timeline:before {
+    left: 8px;
   }
 }

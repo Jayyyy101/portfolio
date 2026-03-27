@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo } from "react";
 import { PortfolioData } from "@/types/portfolio";
 
@@ -32,6 +33,14 @@ export function PortfolioPageClient({ data }: Props) {
             </p>
           </div>
           <aside className="hero-side">
+            <Image
+              src="/profile-jayita.png"
+              alt="Jayita Sharma profile"
+              className="profile-photo"
+              width={420}
+              height={540}
+              priority
+            />
             <p className="kicker">Core Focus</p>
             <div className="chip-row">
               <span className="chip">Marketplace Strategy</span>
