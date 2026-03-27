@@ -56,6 +56,9 @@ a:hover {
 
 /* ——— Header ——— */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -63,6 +66,8 @@ a:hover {
   padding: 20px clamp(18px, 4vw, 40px) 28px;
   max-width: 1120px;
   margin: 0 auto;
+  background: var(--bg);
+  border-bottom: 1px solid var(--panel-border);
 }
 
 .site-header__brand {
