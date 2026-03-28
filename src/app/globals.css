@@ -236,9 +236,9 @@ a:hover {
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 40px;
   align-items: center;
-  padding: 32px 0 56px;
+  padding: 28px 0 40px;
   border-bottom: 1px solid var(--panel-border);
 }
 
@@ -326,13 +326,15 @@ a:hover {
   border-radius: 4px;
   padding: 8px;
   background: var(--bg-elevated);
-  max-width: 100%;
+  max-width: min(400px, 100%);
+  box-sizing: border-box;
 }
 
 .hero-section__photo {
-  width: 100%;
+  width: auto;
   height: auto;
-  max-height: min(520px, 70vh);
+  max-width: min(400px, 100%);
+  max-height: min(400px, 65vh);
   object-fit: contain;
   display: block;
   border-radius: 2px;
@@ -341,8 +343,8 @@ a:hover {
 @media (max-width: 900px) {
   .hero-section {
     grid-template-columns: 1fr;
-    gap: 36px;
-    padding-bottom: 40px;
+    gap: 28px;
+    padding: 24px 0 32px;
   }
 }
 
