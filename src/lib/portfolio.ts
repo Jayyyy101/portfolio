@@ -59,9 +59,10 @@ function fallbackPortfolioData(): PortfolioData {
   return {
     content: {
       hero_name: "Jayita Sharma",
-      hero_title: "Product & Growth",
+      hero_title:
+        "I build products people trust, systems that scale, and growth that compounds.",
       hero_summary:
-        "Product and growth specialist building marketplace and AI automation products.",
+        "From marketplace platforms to AI automation — I work at the intersection of user insight and business impact.",
       about:
         "2.5+ years across AI and auto-tech with experience in taxonomy, discovery UX, and growth systems.",
       highlight_1: "2.5+ years experience",

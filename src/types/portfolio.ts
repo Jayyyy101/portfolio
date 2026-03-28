@@ -177,6 +177,10 @@ export type PortfolioData = {
   experience: ExperienceItem[];
   /** About Me: each inner array is one paragraph */
   aboutParagraphs?: AboutSegment[][];
+  /** Bold line under body, e.g. call-to-action (styled with left accent) */
+  aboutClosingLine?: string;
+  /** Pills under About; omit to hide */
+  aboutTags?: string[];
   /** Featured work — full story cards (preferred over `projects[].featured`) */
   featuredStories?: FeaturedStory[];
   /** Smaller cards in “More projects” grid */

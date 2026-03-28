@@ -3,9 +3,10 @@ import { PortfolioData } from "@/types/portfolio";
 export const localPortfolioData: PortfolioData = {
   content: {
     hero_name: "Jayita Sharma",
-    hero_title: "Product & Growth Strategist | Marketplace Platforms & AI Automation",
+    hero_title:
+      "I build products people trust, systems that scale, and growth that compounds.",
     hero_summary:
-      "Product and growth professional with 2.5+ years of experience scaling aggregator and marketplace platforms across auto-tech and AI tools.",
+      "From marketplace platforms to AI automation — I work at the intersection of user insight and business impact. The kind of thinking that turns problems into products.",
     highlight_1: "2.5+ years experience",
     highlight_2: "250+ DAU in first month",
     highlight_3: "3 enterprise clients onboarded in month one",
@@ -13,22 +14,38 @@ export const localPortfolioData: PortfolioData = {
   },
   aboutParagraphs: [
     [
+      { text: "Some people find their edge in code. Some in data. Mine was always in " },
+      { text: "understanding people", highlight: true },
       {
-        text: "I started as a writer — someone who believed words could move people. Turns out, they can also move traffic, convert users, and build products.",
+        text: " — what they search for, what they trust, what makes them stay.",
       },
     ],
     [
       {
-        text: "But here's the thing nobody tells you about following your curiosity: it doesn't take you in a straight line. It takes you through detours that, in hindsight, were never detours at all.",
+        text: "That instinct has never been quiet. It pushed me to learn SEO not as a checklist but as a conversation with intent. It made me see growth not as a funnel but as a series of decisions people make when they think nobody's watching. And when I crossed into product — it turned out everything I already knew was just the same question wearing a different coat.",
       },
     ],
     [
-      { text: "SEO taught me that " },
-      { text: "intention lives behind every search.", highlight: true },
       {
-        text: " Growth taught me that numbers tell stories if you know how to listen. Product taught me that the best ideas are just well-understood problems wearing a solution. And then AI arrived — and suddenly every question I ever had felt like the beginning of a new\u00A0chapter.",
+        text: "That's how a content brief becomes a traffic strategy. How a user problem becomes a product. How a late night with n8n becomes an AI agent that works while you sleep. ",
       },
+      { text: "The medium keeps changing. The obsession doesn't.", highlight: true },
     ],
+    [
+      {
+        text: "I've built marketplace platforms from the ground up, designed adaptive AI engines, and driven half a million monthly visits through organic strategy. I see a problem — ",
+      },
+      { text: "I'm already at the table with a solution.", highlight: true },
+    ],
+  ],
+  aboutClosingLine: "The only question is what we build next.",
+  aboutTags: [
+    "AI-native products",
+    "Discovery architecture",
+    "Growth automation",
+    "0→1 building",
+    "Marketplace & aggregators",
+    "SEO-led growth",
   ],
   featuredStories: [
     {

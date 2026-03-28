@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SectionTitle } from "@/components/portfolio/SectionTitle";
 
 /**
  * Google (official G) + IIT Roorkee + University of Delhi seals.
@@ -6,9 +7,7 @@ import Image from "next/image";
 export function InstitutionStrip() {
   return (
     <section className="institution-strip" aria-labelledby="institution-strip-heading">
-      <h2 id="institution-strip-heading" className="institution-strip__title">
-        Education &amp; certifications
-      </h2>
+      <SectionTitle id="institution-strip-heading">Education &amp; certifications</SectionTitle>
       <p className="institution-strip__subtitle">
         Degrees and programs that grounded my craft—and still inform how I frame problems, ship product, and grow systems.
       </p>

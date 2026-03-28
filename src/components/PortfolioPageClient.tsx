@@ -23,10 +23,13 @@ export function PortfolioPageClient({ data }: Props) {
       <div className="site-shell">
         <HeroSection
           name={data.content.hero_name ?? "Jayita Sharma"}
-          title={data.content.hero_title ?? "Product & Growth Strategist | Marketplace Platforms & AI Automation"}
+          title={
+            data.content.hero_title ??
+            "I build products people trust, systems that scale, and growth that compounds."
+          }
           summary={
             data.content.hero_summary ??
-            "Product and growth specialist building marketplace and AI automation products."
+            "From marketplace platforms to AI automation — I work at the intersection of user insight and business impact."
           }
         />
         <InstitutionStrip />
@@ -36,6 +39,8 @@ export function PortfolioPageClient({ data }: Props) {
             data.content.about ??
             "Jayita works across product strategy, discovery architecture, and growth systems."
           }
+          closingLine={data.aboutClosingLine}
+          tags={data.aboutTags}
         />
         <FeaturedWorkZ stories={data.featuredStories} projects={data.projects} />
         {data.moreProjects && data.moreProjects.length > 0 ? (

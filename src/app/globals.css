@@ -9,6 +9,9 @@
   --gold: #d4af37;
   --gold-dim: #b8962e;
   --gold-glow: rgba(212, 175, 55, 0.15);
+  /** Subtle gold outlines (pills, seals) — matches hero frame + buttons */
+  --gold-ring: rgba(212, 175, 55, 0.42);
+  --gold-ring-soft: rgba(212, 175, 55, 0.24);
   --site-max: 1320px;
   font-family: var(--font-dm), system-ui, sans-serif;
 }
@@ -239,7 +242,6 @@ a:hover {
   gap: 40px;
   align-items: center;
   padding: 28px 0 40px;
-  border-bottom: 1px solid var(--panel-border);
 }
 
 .hero-section__intro {
@@ -279,13 +281,24 @@ a:hover {
   color: var(--gold);
   font-weight: 500;
   margin: 0 0 20px;
-  max-width: 36ch;
+  max-width: 42ch;
+  line-height: 1.55;
+}
+
+.hero-section__role--italic {
+  font-style: italic;
+  font-weight: 400;
 }
 
 .hero-section__summary {
   color: var(--muted);
   margin: 0 0 24px;
-  max-width: 48ch;
+  max-width: 52ch;
+  line-height: 1.65;
+}
+
+.hero-section__summary--italic {
+  font-style: italic;
 }
 
 .btn-gold-outline {
@@ -351,23 +364,15 @@ a:hover {
 /* ——— Institution strip (under hero) ——— */
 .institution-strip {
   padding: 36px 0 40px;
-  border-bottom: 1px solid var(--panel-border);
-}
-
-.institution-strip__title {
-  font-size: 1.08rem;
-  font-weight: 600;
-  color: var(--gold);
-  margin: 0 0 8px;
-  line-height: 1.35;
-  letter-spacing: 0.02em;
 }
 
 .institution-strip__subtitle {
-  margin: 0 0 28px;
-  font-size: 0.92rem;
+  margin: -8px 0 28px;
+  font-size: 0.95rem;
+  font-style: italic;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   text-wrap: pretty;
 }
 
@@ -394,7 +399,7 @@ a:hover {
   flex-shrink: 0;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--panel-border);
+  border: 1px solid var(--gold-ring-soft);
   background: #fafafa;
   display: flex;
   align-items: center;
@@ -529,6 +534,17 @@ a:hover {
   margin-bottom: 0;
 }
 
+.about-section__closing {
+  margin: 1.75em 0 0;
+  padding-left: 14px;
+  border-left: 3px solid #2d8a69;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
 .about-highlight {
   color: #2d8a69;
   font-weight: 500;
@@ -542,11 +558,19 @@ a:hover {
 }
 
 .about-tag {
-  border: 1px solid var(--panel-border);
+  border: 1px solid var(--gold-ring);
   color: var(--muted);
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 0.85rem;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.about-tag:hover {
+  border-color: var(--gold-dim);
+  background: var(--gold-glow);
 }
 
 /* ——— Skills ——— */
@@ -558,6 +582,7 @@ a:hover {
 .skills-section__intro {
   color: var(--muted);
   font-size: 1.02rem;
+  font-style: italic;
   line-height: 1.68;
   margin: 0 0 36px;
   text-wrap: pretty;
@@ -629,7 +654,7 @@ a:hover {
 .skills-chip--tools {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text);
-  border: 1px solid var(--panel-border);
+  border: 1px solid var(--gold-ring-soft);
 }
 
 /* ——— Featured Z ——— */
@@ -1284,7 +1309,7 @@ a:hover {
 .writing-section__soon {
   padding: 28px 24px;
   border-radius: 12px;
-  border: 1px solid var(--panel-border);
+  border: 1px solid var(--gold-ring-soft);
   background: var(--panel);
   text-align: center;
 }
@@ -1310,6 +1335,7 @@ a:hover {
 .writing-section__preview-lede {
   margin: 0 0 28px;
   font-size: 0.95rem;
+  font-style: italic;
   line-height: 1.6;
   max-width: 62ch;
   text-wrap: pretty;
@@ -1347,7 +1373,7 @@ a:hover {
   flex: 1;
   height: 1px;
   min-width: 40px;
-  background: linear-gradient(90deg, var(--panel-border), transparent);
+  background: linear-gradient(90deg, var(--gold-dim), transparent);
 }
 
 .writing-cards {
@@ -1360,7 +1386,7 @@ a:hover {
   display: block;
   padding: 18px 20px;
   border-radius: 12px;
-  border: 1px solid var(--panel-border);
+  border: 1px solid rgba(212, 175, 55, 0.14);
   background: var(--panel);
   text-decoration: none;
   color: inherit;
@@ -1401,7 +1427,7 @@ a:hover {
 }
 
 .writing-card--link:hover {
-  border-color: rgba(212, 175, 55, 0.35);
+  border-color: var(--gold-ring);
   background: #1a1a1a;
 }
 

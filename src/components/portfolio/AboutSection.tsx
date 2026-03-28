@@ -5,6 +5,8 @@ type Props = {
   paragraphs: AboutSegment[][];
   /** Fallback single block when `paragraphs` is empty */
   fallbackBody?: string;
+  closingLine?: string;
+  tags?: string[];
 };
 
 function Paragraph({ segments }: { segments: AboutSegment[] }) {
@@ -23,8 +25,9 @@ function Paragraph({ segments }: { segments: AboutSegment[] }) {
   );
 }
 
-export function AboutSection({ paragraphs, fallbackBody }: Props) {
+export function AboutSection({ paragraphs, fallbackBody, closingLine, tags }: Props) {
   const hasStructured = paragraphs.length > 0;
+  const tagList = tags?.length ? tags : null;
 
   return (
     <section id="about" className="about-section">
@@ -36,12 +39,16 @@ export function AboutSection({ paragraphs, fallbackBody }: Props) {
           <p className="about-section__para">{fallbackBody}</p>
         )}
       </div>
-      <div className="about-section__tags">
-        <span className="about-tag">Product strategy</span>
-        <span className="about-tag">Marketplace &amp; aggregators</span>
-        <span className="about-tag">Growth &amp; SEO</span>
-        <span className="about-tag">AI automation</span>
-      </div>
+      {closingLine ? <p className="about-section__closing">{closingLine}</p> : null}
+      {tagList ? (
+        <div className="about-section__tags">
+          {tagList.map((label) => (
+            <span key={label} className="about-tag">
+              {label}
+            </span>
+          ))}
+        </div>
+      ) : null}
     </section>
   );
 }
