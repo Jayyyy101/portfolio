@@ -1,5 +1,15 @@
-Drop your latest resume PDF here as:
+Resume folders
+==============
 
-  resume.pdf
+Current/
+  resume.pdf   ← Active file the site serves (/resume/Current/resume.pdf).
 
-Overwrite this file whenever you update your resume. The site links to it via /resume/resume.pdf (see src/lib/site.ts).
+Archive/
+  …            ← Old PDFs when you rotate versions (any filename you like).
+
+When you update
+---------------
+1. Move Current/resume.pdf → Archive/<e.g. resume-2025-03.pdf>
+2. Save the new PDF as Current/resume.pdf
+
+Config: src/lib/site.ts → RESUME_PATH

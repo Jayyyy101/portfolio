@@ -11,29 +11,56 @@ export function SkillsSection({ data }: Props) {
   return (
     <section id="skills" className="skills-section" aria-labelledby="skills-heading">
       <SectionTitle id="skills-heading">Skills</SectionTitle>
-      <p className="skills-section__intro">
-        {data.intro.map((seg, i) =>
-          seg.emph ? (
-            <strong key={i} className="skills-section__emph">
-              {seg.text}
-            </strong>
+      {data.intro.length ? (
+        <p className="skills-section__intro">
+          {data.intro.map((seg, i) =>
+            seg.emph ? (
+              <strong key={i} className="skills-section__emph">
+                {seg.text}
+              </strong>
+            ) : (
+              <span key={i}>{seg.text}</span>
+            )
+          )}
+        </p>
+      ) : null}
+      <div className="skills-section__blocks">
+        {data.categories.map((cat) =>
+          cat.isToolsBand ? (
+            <div key={cat.id} className="skills-section__block skills-section__block--tools">
+              <h3 className="skills-section__tools-heading">{cat.title}</h3>
+              <ul className="skills-section__chips" aria-label={cat.title}>
+                {cat.items.map((item) => (
+                  <li key={`${cat.id}-${item}`} className="skills-chip skills-chip--neutral">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : (
-            <span key={i}>{seg.text}</span>
+            <div key={cat.id} className="skills-section__block">
+              <div className="skills-section__block-head">
+                {cat.index ? <span className="skills-section__index">{cat.index}</span> : null}
+                <div className="skills-section__block-copy">
+                  <div className="skills-section__block-lede">
+                    <h3 className="skills-section__block-title">{cat.title}</h3>
+                    {cat.description ? (
+                      <p className="skills-section__block-desc">{cat.description}</p>
+                    ) : null}
+                  </div>
+                  <ul className="skills-section__chips" aria-label={cat.title}>
+                    {cat.items.map((item) => (
+                      <li key={`${cat.id}-${item}`} className="skills-chip skills-chip--neutral">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           )
         )}
-      </p>
-      {data.categories.map((cat) => (
-        <div key={cat.id} className="skills-section__group">
-          <h3 className="skills-section__label">{cat.title}</h3>
-          <ul className="skills-section__chips" aria-label={cat.title}>
-            {cat.items.map((item) => (
-              <li key={`${cat.id}-${item}`} className={`skills-chip skills-chip--${cat.variant}`}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      </div>
     </section>
   );
 }

@@ -3,14 +3,19 @@
 import { useEffect, useState } from "react";
 import { RESUME_PATH } from "@/lib/site";
 
-const NAV_LINKS = [
+const PRIMARY_LINKS = [
   { href: "#about", label: "About" },
   { href: "#featured", label: "Work" },
-  { href: "#skills", label: "Skills" },
-  { href: "#certifications", label: "Certifications" },
-  { href: "#articles", label: "Articles" },
-  { href: "#contact", label: "Contact" },
 ] as const;
+
+const EXPLORE_LINKS = [
+  { href: "#ai-consulting", label: "AI consulting" },
+  { href: "#skills", label: "Skills" },
+  { href: "#articles", label: "Writing & Thinking" },
+  { href: "#education", label: "Education & certification" },
+] as const;
+
+const CONTACT_LINK = { href: "#contact", label: "Contact" } as const;
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,10 +36,17 @@ export function SiteHeader() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const allMobileLinks = [...PRIMARY_LINKS, ...EXPLORE_LINKS, CONTACT_LINK];
+
   return (
     <header className="site-header">
-      <a href="#hero" className="site-header__brand" onClick={closeMenu}>
-        Jayita Sharma
+      <a
+        href="#hero"
+        className="site-header__brand"
+        onClick={closeMenu}
+        aria-label="Jayita Sharma — Home"
+      >
+        <span className="site-header__logotype">JS</span>
       </a>
 
       <button
@@ -63,13 +75,57 @@ export function SiteHeader() {
         className={`site-header__nav ${menuOpen ? "is-open" : ""}`}
         aria-label="Primary"
       >
-        {NAV_LINKS.map(({ href, label }) => (
-          <a key={href} href={href} onClick={closeMenu}>
-            {label}
+        {/* Desktop: fewer top-level choices — Explore groups secondary destinations */}
+        <div className="site-header__nav-desktop">
+          {PRIMARY_LINKS.map(({ href, label }) => (
+            <a key={href} href={href} onClick={closeMenu}>
+              {label}
+            </a>
+          ))}
+          <div className="site-header__more">
+            <button
+              type="button"
+              className="site-header__more-trigger"
+              id="site-header-explore-trigger"
+              aria-haspopup="menu"
+              aria-controls="site-header-explore-menu"
+            >
+              Explore
+            </button>
+            <div
+              id="site-header-explore-menu"
+              className="site-header__more-panel"
+              role="menu"
+              aria-labelledby="site-header-explore-trigger"
+            >
+              {EXPLORE_LINKS.map(({ href, label }) => (
+                <a key={href} href={href} role="menuitem" onClick={closeMenu}>
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+          <a href={CONTACT_LINK.href} onClick={closeMenu}>
+            {CONTACT_LINK.label}
           </a>
-        ))}
+        </div>
+
+        {/* Mobile overlay: full list, single column */}
+        <div className="site-header__nav-mobile">
+          {allMobileLinks.map(({ href, label }) => (
+            <a key={href} href={href} onClick={closeMenu}>
+              {label}
+            </a>
+          ))}
+        </div>
+
         <div className="site-header__resume-row">
-          <a className="btn-gold-outline site-header__resume" href={RESUME_PATH} download onClick={closeMenu}>
+          <a
+            className="btn-header-subtle site-header__resume"
+            href={RESUME_PATH}
+            download
+            onClick={closeMenu}
+          >
             Resume
           </a>
         </div>

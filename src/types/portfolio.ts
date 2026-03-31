@@ -66,9 +66,15 @@ export type SkillsChipVariant = "mint" | "lavender" | "sand" | "ice" | "tools";
 
 export type SkillsCategory = {
   id: string;
+  /** Display index (e.g. "01"); omit for the tools band */
+  index?: string;
   title: string;
+  /** One-line context under the title; omit when `isToolsBand` */
+  description?: string;
   variant: SkillsChipVariant;
   items: string[];
+  /** Last row: uppercase "Tools" heading, no index or description */
+  isToolsBand?: boolean;
 };
 
 export type SkillIntroSegment = {
@@ -113,13 +119,20 @@ export type FeaturedStorySegment = { text: string; strong?: boolean };
 export type FeaturedModalBlock =
   | { type: "paragraph"; heading: string; body: string }
   | { type: "bullets"; heading: string; items: string[] }
-  | { type: "subheading"; text: string };
+  | { type: "subheading"; text: string }
+  | { type: "divider" }
+  | { type: "richParagraph"; heading: string; segments: FeaturedStorySegment[] }
+  | { type: "dashBullets"; heading: string; items: string[] }
+  | { type: "statGrid"; heading: string; stats: { value: string; label: string }[] }
+  | { type: "pullQuote"; heading: string; quote: string };
 
 export type FeaturedStoryModal = {
   overview: string;
   details: string;
   /** Amber/gold pills in the modal header area */
   modalTags: string[];
+  /** When true, hide the top metric pills (e.g. when body uses a stat grid). */
+  hideTopMetrics?: boolean;
   blocks?: FeaturedModalBlock[];
   primaryAction?: { label: string; href: string };
   secondaryAction?: { label: string; href: string };
@@ -151,6 +164,8 @@ export type CaseStudyModalStory = {
   featuredImage?: string;
   featuredImageAlt?: string;
   modal: FeaturedStoryModal;
+  /** Metric / outcome pills — same visual weight as featured card chips */
+  impactHighlights?: string[];
 };
 
 /** Rich narrative card in Featured Product Work (Z-layout). */
@@ -163,12 +178,34 @@ export type FeaturedStory = {
   meta: string;
   paragraphs: FeaturedStorySegment[][];
   footerTags: string[];
+  /** Optional short italic lede on the card (replaces paragraph body when set). */
+  cardLede?: string;
+  /** Single prominent metrics line with middots (replaces footer tag chips when set). */
+  impactLine?: string;
   featuredImage?: string;
   featuredImageAlt?: string;
   /** Crop focal point for featured frame (`object-position`); landing pages = top, dense diagrams = center */
   featuredImageFocus?: "top" | "center";
   /** Full-screen case study popup */
   modal?: FeaturedStoryModal;
+};
+
+/** External strategy deck card (AI consulting grid). */
+export type ConsultingDeckItem = {
+  id: string;
+  /** Short pill, e.g. Healthcare */
+  industryTag: string;
+  /** Two-letter (or so) monogram on placeholder covers; defaults to first chars of industryTag */
+  coverInitials?: string;
+  /** Primary headline, e.g. AI in Healthcare */
+  headline: string;
+  /** Supporting one-liner under the headline */
+  subtitle?: string;
+  /** Opens in a new tab when set; otherwise the card links to #contact */
+  presentationUrl?: string;
+  /** Card cover: `/public` path or image URL — not `app.presentations.ai/view/…` (use CDN `og:image` thumbnail instead) */
+  thumbnailSrc?: string;
+  thumbnailAlt?: string;
 };
 
 export type PortfolioData = {
@@ -185,7 +222,9 @@ export type PortfolioData = {
   featuredStories?: FeaturedStory[];
   /** Smaller cards in “More projects” grid */
   moreProjects?: MoreProjectItem[];
-  /** Product thinking & articles — grouped cards (ignored when `writingComingSoon`) */
+  /** AI consulting / strategy decks grid */
+  consultingDecks?: ConsultingDeckItem[];
+  /** Writing & thinking — grouped cards (ignored when `writingComingSoon`) */
   writing?: WritingGroup[];
   /** When true, show a placeholder instead of article cards */
   writingComingSoon?: boolean;

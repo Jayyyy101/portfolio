@@ -6,11 +6,8 @@ import { SectionTitle } from "@/components/portfolio/SectionTitle";
  */
 export function InstitutionStrip() {
   return (
-    <section className="institution-strip" aria-labelledby="institution-strip-heading">
-      <SectionTitle id="institution-strip-heading">Education &amp; certifications</SectionTitle>
-      <p className="institution-strip__subtitle">
-        Degrees and programs that grounded my craft—and still inform how I frame problems, ship product, and grow systems.
-      </p>
+    <section id="education" className="institution-strip" aria-labelledby="institution-strip-heading">
+      <SectionTitle id="institution-strip-heading">Education and Certification</SectionTitle>
       <ul className="institution-strip__list">
         <li className="institution-strip__item">
           <div className="institution-strip__circle institution-strip__circle--img institution-strip__circle--google-mark">

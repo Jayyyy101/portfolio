@@ -1,18 +1,17 @@
 import { SectionTitle } from "@/components/portfolio/SectionTitle";
 import type { WritingCard, WritingGroup } from "@/types/portfolio";
 
-function MagnifyGlassIcon() {
+function LinkedInCtaIcon() {
   return (
     <svg
-      className="writing-card__magnify-icon"
+      className="writing-card__cta-icon"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
     >
-      <circle cx="10.5" cy="10.5" r="6.75" stroke="currentColor" strokeWidth="1.65" />
       <path
-        d="M15.2 15.2 21 21"
+        d="M5 12h12M13 8l6 4-6 4"
         stroke="currentColor"
         strokeWidth="1.65"
         strokeLinecap="round"
@@ -29,34 +28,33 @@ type Props = {
 };
 
 function WritingCardBlock({ card, preview }: { card: WritingCard; preview?: boolean }) {
+  const isLinked = Boolean(card.href && !preview);
+
   const inner = (
     <>
-      <div className="writing-card__head">
-        <h4 className="writing-card__title">{card.title}</h4>
-        <span className="writing-card__head-tags">
-          <span className={`writing-card__tag writing-card__tag--${card.tagVariant}`}>{card.tag}</span>
-          {preview ? (
-            <span className="writing-card__soon-badge" title="Link goes live when published">
-              Soon
-            </span>
-          ) : null}
-        </span>
-      </div>
-      <p className="writing-card__desc">{card.description}</p>
-      {card.angle ? (
-        <p className="writing-card__angle">
-          <span className="writing-card__angle-start">
-            <MagnifyGlassIcon />
+      <div className="writing-card__meta">
+        <span className={`writing-card__tag writing-card__tag--${card.tagVariant}`}>{card.tag}</span>
+        {preview ? (
+          <span className="writing-card__soon-badge" title="Link goes live when published">
+            Soon
           </span>
-          <span>{card.angle}</span>
-        </p>
+        ) : null}
+      </div>
+      <h4 className="writing-card__title">{card.title}</h4>
+      <p className="writing-card__desc">{card.description}</p>
+      {card.angle ? <p className="writing-card__angle">{card.angle}</p> : null}
+      {isLinked ? (
+        <div className="writing-card__foot">
+          <span className="writing-card__cta-text">Read on LinkedIn</span>
+          <LinkedInCtaIcon />
+        </div>
       ) : null}
     </>
   );
 
   const cardClass = `writing-card writing-card--static${preview ? " writing-card--preview" : ""}`;
 
-  if (card.href && !preview) {
+  if (isLinked) {
     return (
       <a
         href={card.href}
@@ -78,7 +76,7 @@ export function WritingAccordion({ groups, comingSoon }: Props) {
   if (!groups.length && comingSoon) {
     return (
       <section id="articles" className="writing-section writing-section--preview">
-        <SectionTitle>Product Thinking &amp; Articles</SectionTitle>
+        <SectionTitle>Writing &amp; Thinking</SectionTitle>
         <div className="writing-section__soon">
           <p className="writing-section__soon-label">In the works</p>
           <p className="writing-section__soon-hint muted">
@@ -95,7 +93,7 @@ export function WritingAccordion({ groups, comingSoon }: Props) {
       className={`writing-section${comingSoon ? " writing-section--preview" : ""}`}
       aria-busy={comingSoon ? "true" : undefined}
     >
-      <SectionTitle>Product Thinking &amp; Articles</SectionTitle>
+      <SectionTitle>Writing &amp; Thinking</SectionTitle>
       {comingSoon ? (
         <p className="writing-section__preview-lede muted">
           <strong className="writing-section__preview-strong">In the works</strong>— a few longer pieces are still taking shape. Stay tuned.

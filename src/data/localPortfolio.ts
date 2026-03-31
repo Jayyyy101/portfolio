@@ -1,16 +1,17 @@
+import { RESUME_PATH, SOCIAL_LINKEDIN } from "@/lib/site";
 import { PortfolioData } from "@/types/portfolio";
 
 export const localPortfolioData: PortfolioData = {
   content: {
     hero_name: "Jayita Sharma",
     hero_title:
-      "I build products people trust, systems that scale, and growth that compounds.",
+      "Product Lead · Growth Strategist · AI Automation Architect",
     hero_summary:
-      "From marketplace platforms to AI automation — I work at the intersection of user insight and business impact. The kind of thinking that turns problems into products.",
-    highlight_1: "2.5+ years experience",
-    highlight_2: "250+ DAU in first month",
-    highlight_3: "3 enterprise clients onboarded in month one",
-    highlight_4: "~500K monthly visits added via SEO growth",
+      "I turn user insights into scalable products, growth systems, and AI automations that drive adoption, retention, and operational efficiency",
+    highlight_1: "500K+ incremental monthly visits (organic)",
+    highlight_2: "250+ DAU · 3 enterprise clients (month one)",
+    highlight_3: "1,000+ AI tools · 30+ categories (taxonomy & IA)",
+    highlight_4: "40% fewer content errors · 60% faster CMS publishing",
   },
   aboutParagraphs: [
     [
@@ -33,7 +34,7 @@ export const localPortfolioData: PortfolioData = {
     ],
     [
       {
-        text: "I've built marketplace platforms from the ground up, designed adaptive AI engines, and driven half a million monthly visits through organic strategy. I see a problem — ",
+        text: "I've built marketplace platforms from the ground up, designed adaptive AI engines, and driven 500K+ incremental monthly visits through organic strategy. I see a problem — ",
       },
       { text: "I'm already at the table with a solution.", highlight: true },
     ],
@@ -53,32 +54,16 @@ export const localPortfolioData: PortfolioData = {
       order: 1,
       badge: "AI Tools · Product",
       badgeVariant: "mint",
-      title: "ThatsMyAI — Where the AI world finally made sense",
-      meta: "Product Lead · March 2024 – Present",
-      paragraphs: [
-        [
-          {
-            text: "Thousands of AI tools, zero intuitive shelves — discovery felt like searching a library where nothing is catalogued. As product lead I owned ",
-          },
-          {
-            text: "taxonomy through enquiries and n8n-backed freshness",
-            strong: true,
-          },
-          {
-            text: " so ThatsMyAI could scale without drowning users in noise.",
-          },
-        ],
-      ],
-      footerTags: [
-        "250+ DAU · Month one",
-        "Full discovery architecture",
-        "n8n automation workflows",
-      ],
+      title: "ThatsMyAI — AI Tools Marketplace",
+      meta: "",
+      paragraphs: [],
+      footerTags: [],
+      cardLede:
+        "Built an AI tools marketplace from scratch — 1,000+ tools, structured for how people actually search. 250+ DAU and 3 enterprise clients in the first month.",
       modal: {
-        overview:
-          "Owned discovery for an AI tools aggregator: turning a crowded, hard-to-navigate landscape into a structured marketplace where users can compare, shortlist, and take the next step with confidence.",
-        details:
-          "Work spanned taxonomy, information architecture, listing and navigation patterns, enquiry flows, and automation for freshness. Early traction included 250+ DAU in month one and three enterprise clients onboarded in the first month — evidence that discovery and onboarding were thought through, not guessed.",
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
         modalTags: [
           "AI marketplace",
           "Taxonomy",
@@ -93,42 +78,77 @@ export const localPortfolioData: PortfolioData = {
         ],
         blocks: [
           {
-            type: "paragraph",
-            heading: "Problem",
-            body: "Users faced an explosion of AI tools with inconsistent categorisation, weak comparability, and unclear next steps. Discovery felt noisy, and both consumers and enterprise evaluators struggled to move from browsing to action.",
-          },
-          {
-            type: "bullets",
-            heading: "Research & insights",
-            items: [
-              "Search and filter behaviour mapped poorly to static category trees without synonym and intent coverage.",
-              "Trust signals (use case, integrations, pricing clarity) needed to sit alongside listings, not after deep clicks.",
-              "Enterprises needed repeatable evaluation paths: shortlist, compare, contact — without losing context.",
-              "Freshness mattered: new tools land weekly; manual curation could not scale without automation support.",
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "The AI tools market exploded overnight. Thousands of tools, dozens of categories, zero structure. Users weren't struggling to find AI — they were struggling to find the ",
+              },
+              { text: "right", strong: true },
+              {
+                text: " AI. I led product to fix that — building a marketplace where discovery felt like browsing a well-curated store, not digging through a cluttered directory.",
+              },
             ],
           },
+          { type: "divider" },
           {
-            type: "paragraph",
-            heading: "Solution",
-            body: "Defined category logic and navigational IA, specified listing modules and enquiry flows, and paired product surfaces with n8n-based publishing and distribution workflows so the platform stayed current while the team stayed lean.",
-          },
-          {
-            type: "bullets",
-            heading: "Expected impact",
-            items: [
-              "Faster time-to-relevant-tool for new visitors.",
-              "Clearer enterprise evaluation journeys and higher-quality inbound conversations.",
-              "Sustainable operations through automated content and outreach loops.",
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "Finding the right AI tool was broken — not because the tools didn't exist, but because nothing was organised for how people actually think and search. Categories were arbitrary. Listings were inconsistent. Enterprise buyers had no clear path from browsing to decision. And the platform had no way to stay fresh without burning the team out on manual updates.",
+              },
             ],
           },
+          { type: "divider" },
           {
-            type: "paragraph",
-            heading: "Key learnings",
-            body: "On aggregators, taxonomy is product strategy. If the shelves are wrong, every downstream metric compounds the confusion — SEO, conversion, and support included.",
+            type: "dashBullets",
+            heading: "What I discovered",
+            items: [
+              "People search by intent and use case — not by tool name or category label. The taxonomy had to reflect how users think, not how products are built.",
+              "Trust signals needed to be visible upfront — pricing clarity, use cases, integrations — not buried three clicks deep.",
+              "Enterprise evaluators needed a repeatable path: shortlist, compare, contact — without losing their place every time.",
+              "New tools launched weekly. Without automation, freshness was impossible to maintain at scale.",
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "What I built",
+            segments: [
+              { text: "Designed the full taxonomy and information architecture for " },
+              { text: "1,000+ tools", strong: true },
+              { text: " across " },
+              { text: "30+ categories", strong: true },
+              {
+                text: " — structured around user intent, not product labels. Owned PRDs for listing systems, enquiry workflows, and dynamic navigation. Paired everything with ",
+              },
+              { text: "n8n automation", strong: true },
+              {
+                text: " workflows so the platform stayed fresh and the team stayed lean.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Impact",
+            stats: [
+              { value: "250+", label: "Daily active users in month one" },
+              { value: "3", label: "Enterprise clients onboarded in month one" },
+              { value: "1,000+", label: "AI tools across 30+ categories" },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "On aggregator platforms, taxonomy is product strategy. Get the shelves wrong and every downstream metric suffers — SEO, conversion, support, retention. Get it right and the platform sells itself.",
           },
         ],
-        primaryAction: { label: "View project", href: "https://thatsmyai.com" },
-        secondaryAction: { label: "View document", href: "/resume/resume.pdf" },
+        primaryAction: { label: "View project", href: "https://thatsmy.ai/" },
+        secondaryAction: { label: "View document", href: RESUME_PATH },
       },
       featuredImage: "/featured/thatsmyai-landing.png",
       featuredImageAlt:
@@ -139,82 +159,101 @@ export const localPortfolioData: PortfolioData = {
       order: 2,
       badge: "AI · Automation",
       badgeVariant: "lavender",
-      title: "The LinkedIn Agent — like a mum's love, it won't sleep till you've achieved your goals",
-      meta: "Built at ThatsMyAI · 2024",
-      paragraphs: [
-        [
-          {
-            text: "Everyone wants a LinkedIn presence; nobody wants Sunday topic hunts. I built an n8n workflow that ingests live signals and drafts on-theme posts — from ",
-          },
-          {
-            text: "pick-and-publish to hands-off cadence",
-            strong: true,
-          },
-          { text: ", with checkpoints when you want control." },
-        ],
-      ],
-      footerTags: [
-        "Real-time RSS feeds",
-        "End-to-end publishing",
-        "Agentic AI workflow",
-      ],
+      title: "LinkedIn AI Agent — Your Voice, On Autopilot",
+      meta: "",
+      paragraphs: [],
+      cardLede:
+        "I built an AI agent that reads the market, writes in your voice, and posts to LinkedIn — while you focus on everything else.",
+      footerTags: [],
       modal: {
-        overview:
-          "Built an agentic workflow that ingests live signals, proposes topics aligned to market conversation, and takes LinkedIn publishing from draft to post with minimal friction.",
-        details:
-          "The system combines RSS and news sources, relevance filtering, drafting, optional human selection, and scheduled publishing — designed for operators who want consistency without sacrificing judgment. It keeps showing up on a cadence so presence doesn’t depend on weekly manual topic hunts.",
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
         modalTags: [
           "n8n",
           "Agentic workflow",
-          "RSS feeds",
           "LinkedIn",
+          "RSS feeds",
           "Content automation",
           "Publishing",
-          "Prompt design",
-          "Growth",
-          "Product",
+          "Topic discovery",
+          "Market context",
         ],
         blocks: [
           {
-            type: "paragraph",
-            heading: "Problem",
-            body: "Consistency on LinkedIn breaks when research, writing, and scheduling compete with everything else on the calendar. Generic schedulers do not solve idea discovery or topical relevance.",
-          },
-          {
-            type: "bullets",
-            heading: "Research & insights",
-            items: [
-              "Users abandon flows that require manual topic hunting every week.",
-              "Publishing quality drops when tone and structure are not guard-railed.",
-              "Automation wins when humans can intervene briefly — not operate the entire pipeline.",
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "Over 1 billion professionals are on LinkedIn. Only 3% post more than once a week. The gap isn't motivation — it's the daily grind of knowing what to say, when to say it, and actually showing up. I built an AI agent that closes that gap completely — from topic discovery to published post, end to end, zero manual effort required.",
+              },
             ],
           },
+          { type: "divider" },
           {
-            type: "paragraph",
-            heading: "Solution",
-            body: "Designed end-to-end n8n automation: ingest feeds, score topics, generate structured drafts, apply refinements, and publish on cadence — with clear choke points for review when needed.",
-          },
-          {
-            type: "bullets",
-            heading: "Expected impact",
-            items: [
-              "Higher weekly publishing consistency with fewer Sunday planning sessions.",
-              "Better topical alignment with market narratives.",
-              "Lower operational load for solo operators and small teams.",
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "LinkedIn rewards consistency above everything. But consistency is hard when you're also running a business, managing a team, or simply don't know what the market cares about today. Most professionals know they should post — they just don't have the system to do it. The result? Sporadic content, missed opportunities, and a presence that fades the moment life gets busy.",
+              },
             ],
           },
+          { type: "divider" },
           {
-            type: "paragraph",
-            heading: "Key learnings",
-            body: "The best automations feel boring on the outside: strict contracts between steps, observable failures, and defaults that respect brand tone beat flashy prompts every time.",
+            type: "dashBullets",
+            heading: "What I discovered",
+            items: [
+              "80% of B2B leads on social media come from LinkedIn — but only if you show up consistently enough to be found.",
+              "Over 50% of LinkedIn long-form posts in 2025 are AI-generated — yet human-written posts still get 45% more engagement. The opportunity is in sounding human while moving at AI speed.",
+              "Posts that tap into trending market topics outperform generic content every time — timing and relevance matter as much as quality.",
+              "Most professionals don't need more content ideas. They need a system that removes the friction between idea and published post.",
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "What I built",
+            segments: [
+              {
+                text: "An agentic n8n workflow that runs the full content cycle autonomously. It ingests live RSS feeds to surface what the market is talking about, generates contextual post drafts in your voice, and manages end-to-end publishing — including scheduling, formatting, and distribution across LinkedIn. You can brief it with a topic and walk away, or select from its recommendations and approve. Either way, ",
+              },
+              { text: "the post goes out.", strong: true },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Market context",
+            stats: [
+              {
+                value: "$850M",
+                label: "LinkedIn automation tools market in 2026 — growing 42% YoY",
+              },
+              {
+                value: "3%",
+                label: "LinkedIn members who post more than once a week — the gap this solves",
+              },
+              {
+                value: "80%",
+                label: "Of B2B social media leads that come from LinkedIn",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "Automation works best when it removes friction, not personality. The agent doesn't replace your voice — it makes sure your voice actually shows up. Consistently. That's the real product.",
           },
         ],
-        primaryAction: { label: "View project", href: "https://thatsmyai.com" },
-        secondaryAction: { label: "View document", href: "/resume/resume.pdf" },
+        primaryAction: { label: "View project", href: SOCIAL_LINKEDIN },
+        secondaryAction: { label: "View document", href: RESUME_PATH },
       },
-      featuredImage: "/featured/linkedin-agent-workflow.png",
+      featuredImage: "/featured/linkedin-agent-phone-ai.png",
       featuredImageAlt:
-        "Multi-agent automation workflow with social upload agent including LinkedIn publishing",
+        "Phone showing LinkedIn logo against a circuit board with glowing AI chip",
       featuredImageFocus: "center",
     },
     {
@@ -222,89 +261,114 @@ export const localPortfolioData: PortfolioData = {
       order: 3,
       badge: "EdTech · AI Product",
       badgeVariant: "sand",
-      title: "Grovita — the engine that knows where you're stuck before you do",
-      meta: "Product & Automation Consultant",
-      paragraphs: [
-        [
-          {
-            text: "JEE is one of the hardest exams in the world. Most platforms hand you content and wish you luck. Grovita ",
-          },
-          {
-            text: "pays attention",
-            strong: true,
-          },
-          {
-            text: " — I consulted on a three-tier adaptive engine (performance, mastery, recommendations) so next steps follow ",
-          },
-          {
-            text: "behaviour, not a fixed playlist",
-            strong: true,
-          },
-          { text: "." },
-        ],
-      ],
-      footerTags: [
-        "Adaptive learning",
-        "Real-time performance tracking",
-        "Personalised learnings",
-      ],
+      title: "Grovita — Adaptive Learning Engine for JEE",
+      meta: "",
+      paragraphs: [],
+      cardLede:
+        "JEE doesn't fail students. Generic prep platforms do. I built the AI engine that actually adapts — to every student, every session, every gap.",
+      footerTags: [],
       modal: {
-        overview:
-          "Designed product logic for an adaptive JEE prep experience: a three-tier system that records performance, models topic mastery, and recommends what to practise next based on behaviour — not a fixed syllabus order.",
-        details:
-          "The concept treats hesitation, error patterns, and avoidance as signals. The engine translates those signals into learning paths that adapt every session, aiming to intervene before a student wastes time on the wrong difficulty or wrong topic.",
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
         modalTags: [
           "EdTech",
+          "JEE",
           "Adaptive learning",
           "Rule engine",
           "Personalisation",
-          "Assessment design",
-          "JEE",
-          "AI product",
+          "Product strategy",
+          "B2B / white-label",
           "PRDs",
-          "Behaviour signals",
+          "Assessment design",
         ],
         blocks: [
           {
-            type: "paragraph",
-            heading: "Problem",
-            body: "Static content playlists fail competitive exams because they ignore what the student is actually struggling with. Personalisation requires instrumentation: what was answered, how fast, what was skipped, and what repeats.",
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "Over 13 lakh students appear for JEE every year. Most study hard. Most don't make it — not because they lack effort, but because they lack a system that tells them exactly where they're going wrong and what to do next. Grovita is that system. I designed the product logic, the adaptive AI rule engine, and the learning journey that makes personalised preparation actually possible — at scale.",
+              },
+            ],
           },
+          { type: "divider" },
           {
-            type: "bullets",
-            heading: "Research & insights",
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "The JEE preparation market is flooded with content. Byju's had 150 million registered users and still collapsed. The problem was never content — it was that platforms treated every student the same. Same videos, same tests, same roadmap. But students aren't the same. A student stuck on organic chemistry needs a different plan than one struggling with calculus. ",
+              },
+              {
+                text: "Most platforms couldn't tell the difference.",
+                strong: true,
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "dashBullets",
+            heading: "What I discovered",
             items: [
-              "Performance variance within a chapter is as important as chapter completion.",
-              "Students often avoid topics they fear; the system must surface that without shame or noise.",
-              "Recommendations must be explainable enough to build trust with parents and coaches.",
+              "Students don't need more content. They need a system that knows where they're stuck — before they know it themselves.",
+              "Adaptive learning platforms that personalise based on real-time performance see significantly higher engagement and completion rates than static content platforms.",
+              "Most EdTech platforms track what students study. Grovita needed to track how they think — and adjust accordingly.",
+              "B2B institutional adoption is the fastest path to scale — schools and coaching institutes need white-label solutions they can deploy immediately.",
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "What I built",
+            segments: [
+              {
+                text: "A three-tier adaptive AI rule engine — and a 6-stage personalised learning journey built on top of it:",
+              },
             ],
           },
           {
-            type: "subheading",
-            text: "Engine sketch — Record Manager, Topic Master, Recommender",
-          },
-          {
-            type: "paragraph",
-            heading: "Solution",
-            body: "Specified a three-tier architecture: a Record Manager for granular attempt data, a Topic Master for mapping strengths and gaps, and a Recommender that selects next actions based on rules and performance history — with room to evolve toward fuller adaptive models.",
-          },
-          {
-            type: "bullets",
-            heading: "Expected impact",
+            type: "dashBullets",
+            heading: "Six-stage journey",
             items: [
-              "Higher practise efficiency by matching difficulty to ability.",
-              "Better retention through paths that respond to avoidance signals.",
-              "A foundation for measurable outcomes beyond hours watched.",
+              "01 Screening — diagnostic test to establish a baseline across subjects and topics",
+              "02 Learner Profile — AI builds a map of strengths, gaps, and learning pace",
+              "03 Topic Tagging — every question tagged by concept, difficulty, and past performance",
+              "04 Adaptive Practice — questions served based on current knowledge state, not a fixed syllabus",
+              "05 Session Recalibration — AI adjusts the plan after every session based on what just happened",
+              "06 Subject Mastery — clear milestones, gamification, and a study planner that evolves with the student",
             ],
           },
+          { type: "divider" },
           {
-            type: "paragraph",
-            heading: "Key learnings",
-            body: "Adaptive products are data products first. If the events you capture cannot justify the next recommendation, the UX will feel magical-and-wrong instead of magical-and-fair.",
+            type: "statGrid",
+            heading: "Scale & reach",
+            stats: [
+              {
+                value: "13L+",
+                label: "JEE aspirants in India — the addressable market",
+              },
+              {
+                value: "$33B",
+                label: "India EdTech market projected by 2034",
+              },
+              {
+                value: "Global",
+                label:
+                  "Active deal negotiation with Thailand university for China market adoption",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "Content is not the product. The system that knows what to do with content — for each student, in each session — is the product. Grovita's real innovation isn't the questions. It's the engine that decides which question comes next.",
           },
         ],
         primaryAction: { label: "View project", href: "#featured" },
-        secondaryAction: { label: "View document", href: "/resume/resume.pdf" },
+        secondaryAction: { label: "View document", href: RESUME_PATH },
       },
       featuredImage: "/featured/grovita-landing.png",
       featuredImageAlt:
@@ -322,11 +386,27 @@ export const localPortfolioData: PortfolioData = {
         "AI tools aggregator: taxonomy, discovery UX, marketplace requirements, and n8n automations.",
       highlights_json: "[]",
       bullets: [
-        "Owned PRDs for listings, enquiry flows, and dynamic navigation.",
-        "Built LinkedIn + RSS automation workflows for freshness and distribution.",
-        "Onboarded 3 enterprise clients in the first month post-launch.",
+        "Architected taxonomy and IA for 1,000+ AI tools across 30+ categories; 250+ DAU and 3 enterprise onboards within the first month of launch.",
+        "Owned end-to-end PRDs for tool listings, enquiry workflows, dynamic navigation, and discovery UX — spec through production.",
+        "Built agentic LinkedIn and RSS-to-publish n8n workflows for autonomous distribution and platform freshness.",
       ],
       order: 1,
+    },
+    {
+      id: "exp-grovita",
+      company: "Grovita",
+      role: "Product & Automation Consultant",
+      start_date: "May 2025",
+      end_date: "Present",
+      summary:
+        "Adaptive AI EdTech for JEE: rule engine, personalized journeys, and B2B institutional GTM.",
+      highlights_json: "[]",
+      bullets: [
+        "Defined PRDs for a three-tier adaptive AI rule engine (diagnostic screening, real-time recalibration, mastery-based progression) — platform live and in active use.",
+        "Designed six-stage journey and five core modules (Adaptive Question Engine, Confidence Mode, AI Analytics Dashboard, Smart Study Planner, gamification) across student, teacher, and parent surfaces.",
+        "Contributed to B2B institutional GTM, including white-label positioning and active deal negotiation with a Thailand university (cross-border adoption scope).",
+      ],
+      order: 2,
     },
     {
       id: "exp-tractor-junction",
@@ -335,63 +415,74 @@ export const localPortfolioData: PortfolioData = {
       start_date: "Jul 2022",
       end_date: "May 2024",
       summary:
-        "India’s leading agri aggregator: SEO-led growth and content operations at scale.",
+        "India’s leading agri digital aggregator — 3.2M monthly visitors: SEO-led growth and content operations at scale.",
       highlights_json: "[]",
       bullets: [
-        "Led team of 7; +25% output and +17% organic traffic (~500K visits).",
-        "Co-defined in-house CMS requirements with engineering.",
-        "107+ optimized PDPs across vehicle categories.",
+        "Led and upskilled a content team of 7; drove 17% organic traffic growth and 500K+ incremental monthly visits via SEMrush and GSC-led intent strategy.",
+        "Co-defined in-house CMS requirements with engineering — 40% fewer content errors, 60% faster publishing turnaround.",
+        "100+ conversion-oriented PDPs across tractors, trucks, and bikes; org-wide content QA supporting 3.2M visitor operations.",
       ],
-      order: 2,
+      order: 3,
     },
   ],
   skills: {
-    intro: [
-      { text: "My skills don't live in neat boxes — " },
-      { text: "they compound.", emph: true },
-      {
-        text: " Writing taught me clarity. SEO taught me intent. Product taught me systems. Growth taught me leverage. And AI taught me that all of it, put together, is just the beginning.",
-      },
-    ],
+    intro: [],
     categories: [
       {
-        id: "product",
-        title: "Product",
+        id: "understanding",
+        index: "01",
+        title: "Understanding people",
+        description:
+          "Where everything started — reading what people search for, what they trust, and what makes them stay.",
         variant: "mint",
         items: [
-          "Product strategy",
-          "PRDs & feature specs",
-          "Roadmapping",
-          "Feature prioritisation",
-          "0→1 product building",
+          "SEO strategy",
+          "Search intent mapping",
+          "Content strategy",
           "User research",
-          "Stakeholder management",
-          "Go-to-market strategy",
-          "Competitive analysis",
-          "Wireframing & Figma",
+          "Brand voice & positioning",
+          "Keyword gap analysis",
         ],
       },
       {
         id: "growth",
-        title: "Growth & marketing",
+        index: "02",
+        title: "Building for growth",
+        description:
+          "Turning intent into traffic and traffic into outcomes — SEO, content, and channels that compound.",
         variant: "lavender",
         items: [
-          "SEO strategy",
           "Organic traffic growth",
-          "Content strategy",
           "Conversion optimisation",
           "Lead generation",
           "Funnel analysis",
           "LinkedIn growth",
           "Social media strategy",
-          "Brand voice & positioning",
           "Email outreach",
         ],
       },
       {
-        id: "ai",
-        title: "AI & automation",
+        id: "shipping",
+        index: "03",
+        title: "Shipping product",
+        description:
+          "From prioritisation to shipped specs and UX — the craft of getting real products out the door.",
         variant: "sand",
+        items: [
+          "PRDs & feature specs",
+          "Roadmapping",
+          "Feature prioritisation",
+          "0→1 product building",
+          "Wireframing & Figma",
+        ],
+      },
+      {
+        id: "scaling",
+        index: "04",
+        title: "Scaling with systems",
+        description:
+          "Automation, rule engines, and AI workflows — so leverage holds up under real traffic and real ops.",
+        variant: "ice",
         items: [
           "n8n workflows",
           "AI agent design",
@@ -406,8 +497,11 @@ export const localPortfolioData: PortfolioData = {
       },
       {
         id: "platforms",
-        title: "Platforms & marketplaces",
-        variant: "ice",
+        index: "05",
+        title: "Building platforms",
+        description:
+          "Marketplace and aggregator mechanics — discovery, taxonomy, and listings that work at scale.",
+        variant: "sand",
         items: [
           "Aggregator platforms",
           "Discovery UX",
@@ -422,6 +516,7 @@ export const localPortfolioData: PortfolioData = {
         id: "tools",
         title: "Tools",
         variant: "tools",
+        isToolsBand: true,
         items: [
           "SEMrush",
           "Google Analytics",
@@ -445,8 +540,8 @@ export const localPortfolioData: PortfolioData = {
       subtitle: "Taxonomy · IA · Discovery UX",
       problem: "Users struggled to discover relevant AI tools across fast-moving categories.",
       approach:
-        "Defined platform taxonomy and information architecture from high-volume research (SEMrush), then shipped navigation and listing patterns that matched user intent.",
-      impact: "250+ DAU within the first month; stronger category coverage and clearer journeys.",
+        "Architected taxonomy and IA for 1,000+ tools across 30+ categories; paired SEMrush-informed intent work with navigation and listing patterns that matched how people search and evaluate.",
+      impact: "250+ DAU and 3 enterprise clients in month one; scalable shelves for a fast-growing inventory.",
       tools: "SEMrush, PRDs, Figma, stakeholder alignment",
       order: 1,
       is_published: true,
@@ -467,281 +562,191 @@ export const localPortfolioData: PortfolioData = {
   moreProjects: [
     {
       id: "more-1",
-      title: "Tractor Junction at scale",
-      description: "SEO-led growth and CMS ops on a high-traffic agri marketplace",
+      title: "Tractor Junction — From Content to Product Thinking",
+      description:
+        "Led content strategy for India's leading tractor aggregator — 3.2M monthly visitors, 500K+ organic visits added, and a CMS built from scratch.",
       category: "Growth & SEO",
       badgeVariant: "mint",
-      coverImageAlt: "Marketplace growth abstract",
+      coverImage: "/featured/tractor-junction-home.png",
+      coverImageAlt:
+        "Tractor Junction homepage: search, loan hero, navigation — India's tractor marketplace",
       modal: {
-        overview:
-          "At India’s leading agri marketplace, organic traffic and editorial throughput had to move together — volume without quality erodes trust; quality without volume cedes shelf space to competitors.",
-        details:
-          "I led a content team of seven while co-owning the loop between SEMrush, GSC, GA, and editorial calendars. Work spanned PDP optimisation, topical clusters, and internal advocacy for tooling that reduced turnaround without diluting standards.",
-        modalTags: ["SEO", "Marketplace", "Content ops", "Team lead"],
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
+        modalTags: [
+          "SEO",
+          "Marketplace",
+          "Content strategy",
+          "Team lead",
+          "CMS",
+          "Agri-tech",
+          "SEM / GSC",
+          "PDP optimisation",
+          "Quality assurance",
+        ],
         blocks: [
           {
-            type: "bullets",
-            heading: "Outcomes",
-            items: [
-              "~17% organic traffic lift in a key year; ~500K incremental monthly visits attributed to SEO-led initiatives.",
-              "107+ optimised PDPs across vehicle categories with clearer intent and structured data hygiene.",
-              "Co-defined requirements for an in-house CMS so publishing could scale without losing guardrails.",
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "India is the world's largest tractor market. Millions of farmers make significant purchase decisions every year — and increasingly, they research online before they buy. Tractor Junction is where that research happens. With 3.2 million monthly visitors, it's India's leading digital aggregator for tractors, farm equipment, financing, insurance, and servicing. I led the content team that made it one of the most trusted platforms in the agri-tech space.",
+              },
             ],
           },
+          { type: "divider" },
           {
-            type: "paragraph",
-            heading: "Takeaway",
-            body: "At aggregators, SEO is not a channel silo — it is a product surface. When taxonomy, PDPs, and freshness align, compounding shows up in both rankings and revenue.",
-          },
-        ],
-        secondaryAction: { label: "View resume", href: "/resume/resume.pdf" },
-      },
-    },
-    {
-      id: "more-2",
-      title: "SEO content systems",
-      description:
-        "GA, GSC, SEMrush loops to steer content strategy at 3.2M monthly visitors scale",
-      category: "SEO",
-      badgeVariant: "ice",
-      coverImage: "/featured/linkedin-agent-workflow.png",
-      coverImageAlt: "Workflow and analytics — SEO content systems",
-      modal: {
-        overview:
-          "When monthly visitors are in the millions, intuition stops scaling — you need a repeatable loop from query → brief → ship → measure, with clear ownership at each step.",
-        details:
-          "I helped institutionalise how we read Search Console and SEMrush: which clusters to expand, where cannibalisation appeared, and how to prioritise fixes that moved the aggregate without starving long-tail demand.",
-        modalTags: ["GSC", "SEMrush", "Content strategy", "Analytics"],
-        blocks: [
-          {
-            type: "bullets",
-            heading: "How the loop worked",
-            items: [
-              "Weekly triage of query shifts and impression share changes before they showed up in revenue reports.",
-              "Brief templates tied to intent (informational vs transactional) so writers didn’t ship generic pages.",
-              "Retro on underperforming URLs: thin content, internal links, or SERP feature mismatch.",
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "At the scale of 3.2 million monthly visitors, content is infrastructure. One inconsistent page costs trust. One poorly optimised article costs thousands of visits. The team was producing at volume but without a system — no SEO framework, no quality baseline, no way to measure what was actually working. ",
+              },
+              {
+                text: "Growth was happening despite the process, not because of it.",
+                strong: true,
+              },
             ],
           },
-        ],
-        primaryAction: { label: "Featured work", href: "#featured" },
-      },
-    },
-    {
-      id: "more-3",
-      title: "CMS & publishing ops",
-      description: "Requirements for internal CMS to cut turnaround and standardize quality",
-      category: "Platforms",
-      badgeVariant: "lavender",
-      coverImageAlt: "CMS workflow abstract",
-      modal: {
-        overview:
-          "External traffic means little if the team can’t publish fast enough to test hypotheses. We needed a CMS that matched marketplace reality: many categories, many stakeholders, one quality bar.",
-        details:
-          "I partnered with engineering to translate editorial pain into requirements: workflows, permissions, previews, and guardrails for bulk updates — without turning the tool into a second job for writers.",
-        modalTags: ["CMS", "Requirements", "Publishing", "B2B marketplace"],
-        blocks: [
+          { type: "divider" },
           {
-            type: "paragraph",
-            heading: "What I owned",
-            body: "User stories from content and SEO, acceptance criteria for releases, and rollout plans that didn’t strand legacy pages in limbo.",
+            type: "dashBullets",
+            heading: "What I discovered",
+            items: [
+              "Most high-traffic pages were winning on volume, not intent. Reorienting content around what farmers actually searched for — financing options, brand comparisons, pricing — unlocked a new tier of organic growth.",
+              "Publishing turnaround was slow because the CMS was generic. A custom CMS built for the team's workflow would cut errors and speed up output simultaneously.",
+              "Quality assurance was entirely manual and inconsistent. A framework would remove subjectivity and raise the floor across 100+ product pages.",
+              "The team had capability but no structure to scale it. Upskilling and clear ownership changed output faster than hiring would have.",
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "What I did",
+            segments: [
+              {
+                text: "Led and upskilled a team of 7 with an SEO-first content strategy built on keyword gap analysis and search intent mapping. Collaborated with engineering to define requirements for a custom CMS — reducing content errors by 40% and cutting publishing turnaround by 60%. Developed and optimised 100+ conversion-oriented product descriptions across tractors, trucks, and bikes. Built a content quality assurance framework that brought consistency to every page at 3.2M visitor scale.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Impact",
+            stats: [
+              {
+                value: "500K+",
+                label: "Incremental monthly organic visits added",
+              },
+              {
+                value: "40%",
+                label: "Reduction in content errors after CMS build",
+              },
+              {
+                value: "60%",
+                label: "Faster publishing turnaround time",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "At scale, content strategy and product strategy are the same thing. Every page is a product decision. The CMS is a product. The QA framework is a product. That's when I understood — I'd been doing product all along.",
           },
         ],
+        secondaryAction: { label: "View resume", href: RESUME_PATH },
       },
     },
   ],
-  certifications: [
+  consultingDecks: [
     {
-      id: "cert-genai-tmai",
-      order: 1,
-      title: "Introduction to Generative AI",
-      issuer: "ThatsMyAI",
-      issued: "Issued Sep 2024",
-      credentialId: "a3fa2fd9432e0348cdfc",
-      skills: "Generative AI, Generative Adversarial Networks (GANs), +2 skills",
-      logoInitials: "TM",
-      logoVariant: "brand",
+      id: "deck-ai-consulting-automation",
+      industryTag: "AI consulting",
+      coverInitials: "AC",
+      headline: "AI Consulting & Automation",
+      subtitle:
+        "Operating models, tooling, and delivery patterns for AI in the organisation.",
+      thumbnailSrc:
+        "https://cdn.presentations.ai/thumbnails/15688690/c3e6dd2e-c1d1-4ae5-a2d4-e434edc80392-AI_1280x720.png?v=1774994442717",
+      thumbnailAlt: "SimplySocial — AI Consulting — first slide preview (Presentations.ai)",
+      presentationUrl: "https://app.presentations.ai/view/4DTtmAEHd6",
     },
     {
-      id: "cert-genai-google",
-      order: 2,
-      title: "Generative AI",
-      issuer: "Google",
-      issued: "Issued Jul 2024",
-      credentialId: "9804371",
-      skills: "Generative AI, Machine Learning, Artificial Intelligence (AI), +2 skills",
-      logoInitials: "G",
-      logoVariant: "google",
+      id: "deck-digital-transformation-growth",
+      industryTag: "Digital transformation",
+      coverInitials: "DT",
+      headline: "Strategic Digital Transformation & Growth Strategy",
+      subtitle: "Enterprise roadmaps: change, platforms, and compound growth.",
+      thumbnailSrc:
+        "https://cdn.presentations.ai/thumbnails/20984252/f39e250d-d849-48e5-9e54-326028417879_1280x720.png?v=1774994299116",
+      thumbnailAlt:
+        "Phase-Wise Transformation Plan for Fateh Rural — first slide preview (Presentations.ai)",
+      presentationUrl: "https://app.presentations.ai/view/2Ura6ydfMX",
     },
     {
-      id: "cert-llm-google",
-      order: 3,
-      title: "Large Language Models",
-      issuer: "Google",
-      issued: "Issued Jul 2024",
-      credentialId: "9804434",
-      skills: "Large Language Models, Natural Language Processing (NLP), Deep Learning, +1 skill",
-      logoInitials: "G",
-      logoVariant: "google",
-    },
-    {
-      id: "cert-cpm-iit",
-      order: 4,
-      title: "Certified Product Manager (CPM)",
-      issuer: "Indian Institute of Technology, Roorkee",
-      issued: "Issued Apr 2024",
-      credentialId: "CA-14/2023-24/07",
-      skills: "Product Management, Problem Solving, +3 skills",
-      logoInitials: "IIT",
-      logoVariant: "iit",
+      id: "deck-finance-insurance",
+      industryTag: "Finance & insurance",
+      coverInitials: "FI",
+      headline: "AI in Finance & Insurance",
+      subtitle: "Risk, lending, and customer experience reimagined with AI.",
+      thumbnailSrc:
+        "https://cdn.presentations.ai/thumbnails/15801762/2cf46156-5392-41bb-8cee-6c39d57de36b_1280x720.png?v=1774994570223",
+      thumbnailAlt: "2. AI in Finance & Insurance — first slide preview (Presentations.ai)",
+      presentationUrl: "https://app.presentations.ai/view/5aPhRo",
     },
   ],
   writingComingSoon: false,
   writing: [
     {
-      id: "wg-ai-future",
-      heading: "AI & The Future of Work",
+      id: "wg-linkedin",
+      heading: "LinkedIn",
       cards: [
         {
-          id: "w-saas-india",
-          title: "India's SaaS is dying. AI-native products are what comes next.",
-          tag: "AI",
-          tagVariant: "lavender",
-          description:
-            "1,803 enterprise tech startups shut down in India between 2023-25. The ones surviving are AI-first. This is a real, urgent conversation.",
-          angle:
-            "What does an AI-native product actually look like from the inside — having built one.",
-        },
-        {
-          id: "w-ai-discovery",
-          title: "Everyone is building AI tools. Nobody is building AI discovery.",
-          tag: "Product",
-          tagVariant: "ice",
-          description:
-            "The market is flooded with AI tools but finding the right one is still broken. You literally built the solution to this problem.",
-          angle:
-            "Why discovery is a product problem, not a search problem — from someone who architected it.",
-        },
-      ],
-    },
-    {
-      id: "wg-edtech",
-      heading: "EdTech & Adaptive Learning",
-      cards: [
-        {
-          id: "w-edtech-failed",
-          title: "2,150 EdTech startups failed in India. Here's the product mistake they all made.",
-          tag: "EdTech",
-          tagVariant: "sand",
-          description:
-            "EdTech funding collapsed 56% YoY. Most platforms pushed content, not personalisation. Grovita's approach was the opposite.",
-          angle:
-            "The difference between a platform that teaches and one that actually adapts — and why it matters for survival.",
-        },
-        {
-          id: "w-jee-system",
-          title: "Why JEE students don't need more content. They need a system that listens.",
-          tag: "EdTech",
-          tagVariant: "sand",
-          description:
-            "Physics Wallah is thriving while Byju's collapsed. The difference? Understanding what students actually need vs what looks good on a pitch deck.",
-          angle:
-            "The Grovita rule engine — and what designing it taught you about real learning vs content delivery.",
-        },
-      ],
-    },
-    {
-      id: "wg-growth-seo",
-      heading: "Growth & SEO in the AI Era",
-      cards: [
-        {
-          id: "w-seo-dead",
-          title: "SEO isn't dead. But the way you've been doing it is.",
-          tag: "Growth",
-          tagVariant: "ice",
-          description:
-            "AI-generated content is flooding search. Organic strategies built on volume are collapsing. Intent-led SEO is the only thing left standing.",
-          angle:
-            "How the SEO-first strategy at Tractor Junction — 500K+ extra monthly visits — would be built differently today with AI.",
-        },
-        {
-          id: "w-fintech-users",
-          title: "Fintech is India's most funded sector. And nobody knows how to talk to their users.",
+          id: "w-lsp-mutual-funds",
+          title: "LSPs sitting on a goldmine: unlocking mutual funds distribution",
           tag: "Fintech",
           tagVariant: "mint",
           description:
-            "Fintech raised $1.6B in India in H1 2025 — yet user trust and engagement remain broken. Your resume says you're headed into fintech. This stakes your claim early.",
+            "India's lending platforms have already earned trust at scale—while mutual fund penetration still has room to run. The gap is distribution, not product.",
           angle:
-            "What aggregator and marketplace thinking can teach fintech about discovery, onboarding, and conversion.",
+            "Voice AI, Account Aggregator, embedded finance, and WhatsApp investing: why the next wealth platform may compound on lending rails.",
+          href: "https://www.linkedin.com/posts/jayita-sharma_fintech-lendingserviceproviders-mutualfunds-share-7442237730354348032-H0lF",
         },
-      ],
-    },
-    {
-      id: "wg-creator-social",
-      heading: "Creator Economy & Social Commerce",
-      cards: [
         {
-          id: "w-creator-8pct",
-          title:
-            "Only 8% of Indian creators make money. The other 92% have a product problem.",
-          tag: "Creator Economy",
-          tagVariant: "rose",
+          id: "w-sora-shutdown",
+          title: "OpenAI kills Sora app after 'melting' GPUs",
+          tag: "AI",
+          tagVariant: "ice",
           description:
-            "India has 100M+ creators but monetisation remains broken — discovery, taxonomy, conversion. Sound familiar? You literally built a platform to solve this in a different category.",
+            "From invite waitlists to a quiet shutdown—GPU cost, revenue vs burn, and what happens when the story outruns the business case.",
           angle:
-            "What ThatsMyAI's discovery architecture taught you about why creator monetisation is falling — and what the fix looks like.",
+            "The tech didn’t fail on vibes alone—the question is whether this is one product’s math or the start of a broader AI hype correction.",
+          href: "https://www.linkedin.com/posts/jayita-sharma_openai-sora-ainews-share-7442613822831570944-aLYH",
         },
         {
-          id: "w-linkedin-brands",
-          title: "Every brand wants a LinkedIn presence. Almost none of them have a strategy.",
-          tag: "Social Commerce",
-          tagVariant: "rose",
+          id: "w-openclaw-agents",
+          title: "OpenClaw: AI agent framework breaks records",
+          tag: "Agents",
+          tagVariant: "lavender",
           description:
-            "3 in 4 D2C brands now use creators for growth but most treat it like an afterthought — no system, no consistency, no automation.",
+            "Organic GitHub momentum for an agent layer that runs locally—less about the model, more about orchestration between AI and real work.",
           angle:
-            "What building a LinkedIn AI agent taught you about the difference between showing up and actually being present.",
-        },
-      ],
-    },
-    {
-      id: "wg-qcommerce-d2c",
-      heading: "Quick Commerce & D2C",
-      cards: [
-        {
-          id: "w-qcommerce-discovery",
-          title:
-            "India's Q-commerce market is worth ₹64,000 crore. Nobody is thinking about the discovery problem.",
-          tag: "Q-Commerce",
-          tagVariant: "sand",
-          description:
-            "Blinkit, Zepto, Instamart are racing on speed. But how users find products inside these platforms is still broken. It's a taxonomy and UX problem dressed up as a logistics problem.",
-          angle:
-            "Why the next battleground in quick commerce isn't 10-minute delivery — it's 10-second discovery.",
+            "If the moat isn’t the foundation model, it’s the interface between intelligence and action—the shift from AI that talks to AI that acts.",
+          href: "https://www.linkedin.com/posts/jayita-sharma_aiagents-agenticai-openclaw-share-7442983977067491328-iPXy",
         },
         {
-          id: "w-d2c-roas",
-          title: "D2C brands are spending more on ads and getting less back. Here's the real problem.",
-          tag: "D2C",
-          tagVariant: "sand",
-          description:
-            "ROAS on Meta and Google is falling sharply. CAC in Delhi NCR is 50% above other metros. Yet most brands keep pouring money in instead of fixing the funnel.",
-          angle:
-            "What conversion optimisation from Tractor Junction's 3.2M monthly visitors taught you about where D2C brands are actually leaking.",
-        },
-      ],
-    },
-    {
-      id: "wg-marketplaces",
-      heading: "Marketplaces & Aggregators",
-      cards: [
-        {
-          id: "w-aggregators-fail",
-          title: "Why most aggregators fail at the one thing they exist to do",
-          tag: "Marketplaces",
+          id: "w-india-credit-ai",
+          title: "India's credit system overhaul: AI-driven loans revolution",
+          tag: "Fintech",
           tagVariant: "mint",
           description:
-            "Aggregators promise to simplify choice. Most add to the noise instead. The difference is almost always information architecture — the thing nobody talks about.",
+            "Retail NPAs, RBI guardrails, and why bureau-only scores miss millions—UPI, GST, and real-time behaviour are becoming the underwriting signal.",
           angle:
-            "From Tractor Junction to ThatsMyAI — what two very different aggregators taught you about the anatomy of good discovery.",
+            "From “prove you deserve credit” to “let your behaviour speak”—the lenders who ship that win the next cycle.",
+          href: "https://www.linkedin.com/posts/jayita-sharma_ai-fintech-artificialintelligence-share-7441885355580207105-nCEV",
         },
       ],
     },

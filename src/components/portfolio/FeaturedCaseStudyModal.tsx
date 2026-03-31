@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { useEffect } from "react";
-import type { CaseStudyModalStory } from "@/types/portfolio";
+import type {
+  CaseStudyModalStory,
+  FeaturedModalBlock,
+  FeaturedStorySegment,
+} from "@/types/portfolio";
 
 function ExternalIcon() {
   return (
@@ -55,6 +59,106 @@ function ModalLink({
   );
 }
 
+function RichParagraph({
+  heading,
+  segments,
+}: {
+  heading: string;
+  segments: FeaturedStorySegment[];
+}) {
+  return (
+    <section className="case-modal__section case-modal__section--narrative">
+      <h3 className="case-modal__h3 case-modal__h3--eyebrow">{heading}</h3>
+      <p className="case-modal__body">
+        {segments.map((seg, i) =>
+          seg.strong ? (
+            <strong key={i} className="case-modal__strong">
+              {seg.text}
+            </strong>
+          ) : (
+            <span key={i}>{seg.text}</span>
+          )
+        )}
+      </p>
+    </section>
+  );
+}
+
+function renderModalBlock(block: FeaturedModalBlock, i: number) {
+  if (block.type === "divider") {
+    return <hr key={i} className="case-modal__rule" />;
+  }
+  if (block.type === "richParagraph") {
+    return (
+      <RichParagraph key={i} heading={block.heading} segments={block.segments} />
+    );
+  }
+  if (block.type === "dashBullets") {
+    return (
+      <section key={i} className="case-modal__section case-modal__section--narrative">
+        <h3 className="case-modal__h3 case-modal__h3--eyebrow">{block.heading}</h3>
+        <ul className="case-modal__dash-list">
+          {block.items.map((item) => (
+            <li key={item} className="case-modal__dash-item">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
+  if (block.type === "statGrid") {
+    return (
+      <section key={i} className="case-modal__section case-modal__section--narrative">
+        <h3 className="case-modal__h3 case-modal__h3--eyebrow">{block.heading}</h3>
+        <div className="case-modal__stat-grid">
+          {block.stats.map((s) => (
+            <div key={s.value + s.label} className="case-modal__stat">
+              <span className="case-modal__stat-value">{s.value}</span>
+              <span className="case-modal__stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+  if (block.type === "pullQuote") {
+    return (
+      <section key={i} className="case-modal__section case-modal__section--narrative">
+        <h3 className="case-modal__h3 case-modal__h3--eyebrow">{block.heading}</h3>
+        <blockquote className="case-modal__pull-quote">
+          <p>{block.quote}</p>
+        </blockquote>
+      </section>
+    );
+  }
+  if (block.type === "subheading") {
+    return (
+      <h4 key={i} className="case-modal__h4">
+        {block.text}
+      </h4>
+    );
+  }
+  if (block.type === "paragraph") {
+    return (
+      <section key={i} className="case-modal__section">
+        <h3 className="case-modal__h3">{block.heading}</h3>
+        <p className="case-modal__body">{block.body}</p>
+      </section>
+    );
+  }
+  return (
+    <section key={i} className="case-modal__section">
+      <h3 className="case-modal__h3">{block.heading}</h3>
+      <ul className="case-modal__list">
+        {block.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 type Props = {
   story: CaseStudyModalStory | null;
   onClose: () => void;
@@ -78,6 +182,9 @@ export function FeaturedCaseStudyModal({ story, onClose }: Props) {
   if (!story) return null;
 
   const modal = story.modal;
+  const hasOverview = modal.overview.trim().length > 0;
+  const hasDetails = modal.details.trim().length > 0;
+  const hasTags = modal.modalTags.length > 0;
 
   return (
     <div
@@ -118,51 +225,41 @@ export function FeaturedCaseStudyModal({ story, onClose }: Props) {
           </div>
         ) : null}
 
-        <div className="case-modal__tags">
-          {modal.modalTags.map((tag) => (
-            <span key={tag} className="case-modal__tag">
-              {tag}
-            </span>
-          ))}
-        </div>
+        {story.impactHighlights && story.impactHighlights.length > 0 ? (
+          <ul className="case-modal__impact" aria-label="Key outcomes">
+            {story.impactHighlights.map((line) => (
+              <li key={line} className="case-modal__impact-pill">
+                {line}
+              </li>
+            ))}
+          </ul>
+        ) : null}
 
-        <section className="case-modal__section">
-          <h3 className="case-modal__h3">Overview</h3>
-          <p className="case-modal__body">{modal.overview}</p>
-        </section>
+        {hasTags ? (
+          <div className="case-modal__tags">
+            {modal.modalTags.map((tag) => (
+              <span key={tag} className="case-modal__tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
 
-        <section className="case-modal__section">
-          <h3 className="case-modal__h3">Details</h3>
-          <p className="case-modal__body">{modal.details}</p>
-        </section>
+        {hasOverview ? (
+          <section className="case-modal__section">
+            <h3 className="case-modal__h3">Overview</h3>
+            <p className="case-modal__body">{modal.overview}</p>
+          </section>
+        ) : null}
 
-        {modal.blocks?.map((block, i) => {
-          if (block.type === "subheading") {
-            return (
-              <h4 key={i} className="case-modal__h4">
-                {block.text}
-              </h4>
-            );
-          }
-          if (block.type === "paragraph") {
-            return (
-              <section key={i} className="case-modal__section">
-                <h3 className="case-modal__h3">{block.heading}</h3>
-                <p className="case-modal__body">{block.body}</p>
-              </section>
-            );
-          }
-          return (
-            <section key={i} className="case-modal__section">
-              <h3 className="case-modal__h3">{block.heading}</h3>
-              <ul className="case-modal__list">
-                {block.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
+        {hasDetails ? (
+          <section className="case-modal__section">
+            <h3 className="case-modal__h3">Details</h3>
+            <p className="case-modal__body">{modal.details}</p>
+          </section>
+        ) : null}
+
+        {modal.blocks?.map((block, i) => renderModalBlock(block, i))}
 
         {(modal.primaryAction || modal.secondaryAction) && (
           <footer className="case-modal__footer">

@@ -55,11 +55,19 @@ export function FeaturedWorkInteractive({ stories }: Props) {
           const bodyMain = (
             <div className="featured-work__text featured-story">
               <div className="featured-story__body">
-                {story.paragraphs.map((segs, i) => (
-                  <StoryParagraph key={i} segments={segs} />
-                ))}
+                {story.cardLede ? (
+                  <p className="featured-story__lede">{story.cardLede}</p>
+                ) : (
+                  story.paragraphs.map((segs, i) => (
+                    <StoryParagraph key={i} segments={segs} />
+                  ))
+                )}
               </div>
-              {story.footerTags.length > 0 ? (
+              {story.impactLine ? (
+                <p className="featured-story__impact-line" role="text">
+                  {story.impactLine}
+                </p>
+              ) : story.footerTags.length > 0 ? (
                 <ul className="featured-story__chips" aria-label="Project highlights">
                   {story.footerTags.map((tag) => (
                     <li key={tag} className="featured-story__chip">
@@ -88,42 +96,56 @@ export function FeaturedWorkInteractive({ stories }: Props) {
               imageFocus={story.featuredImageFocus}
             />
           );
+          const headMain = (
+            <div className="featured-work__row-head-main">
+              <h3 className="featured-work__title">{story.title}</h3>
+              <p className="featured-story__meta-line">
+                <span className={badgeClass}>{story.badge}</span>
+                {story.meta ? (
+                  <>
+                    <span className="featured-story__meta-dot" aria-hidden>
+                      ·
+                    </span>
+                    <span className="featured-story__meta">{story.meta}</span>
+                  </>
+                ) : null}
+              </p>
+            </div>
+          );
+          const zStep = (
+            <span className="featured-work__z-step" aria-hidden>
+              {step}
+            </span>
+          );
+          const splitHead = (
+            <header className="featured-work__split-head">
+              <div
+                className={`featured-work__row-head-cluster featured-work__row-head-cluster--${imageLeft ? "step-trail" : "step-lead"}`}
+              >
+                {imageLeft ? (
+                  <>
+                    {headMain}
+                    {zStep}
+                  </>
+                ) : (
+                  <>
+                    {zStep}
+                    {headMain}
+                  </>
+                )}
+              </div>
+            </header>
+          );
+
           return (
             <article
               key={story.id}
               className={`featured-work__row ${imageLeft ? "featured-work__row--media-left" : "featured-work__row--media-right"}`}
             >
-              <header
-                className={`featured-work__row-head ${imageLeft ? "featured-work__row-head--step-right" : "featured-work__row-head--step-left"}`}
-              >
-                {!imageLeft ? (
-                  <span className="featured-work__z-step" aria-hidden>
-                    {step}
-                  </span>
-                ) : null}
-                <div className="featured-work__row-head-main">
-                  <h3 className="featured-work__title">{story.title}</h3>
-                  <p className="featured-story__meta-line">
-                    <span className={badgeClass}>{story.badge}</span>
-                    {story.meta ? (
-                      <>
-                        <span className="featured-story__meta-dot" aria-hidden>
-                          ·
-                        </span>
-                        <span className="featured-story__meta">{story.meta}</span>
-                      </>
-                    ) : null}
-                  </p>
-                </div>
-                {imageLeft ? (
-                  <span className="featured-work__z-step" aria-hidden>
-                    {step}
-                  </span>
-                ) : null}
-              </header>
               <div className="featured-work__row-split">
                 {imageLeft ? (
                   <>
+                    {splitHead}
                     <div className="featured-work__col featured-work__col--visual featured-work__col--visual-left">
                       {visual}
                     </div>
@@ -131,6 +153,7 @@ export function FeaturedWorkInteractive({ stories }: Props) {
                   </>
                 ) : (
                   <>
+                    {splitHead}
                     <div className="featured-work__col featured-work__col--body">{bodyMain}</div>
                     <div className="featured-work__col featured-work__col--visual featured-work__col--visual-right">
                       {visual}
@@ -152,6 +175,10 @@ export function FeaturedWorkInteractive({ stories }: Props) {
                 featuredImage: activeStory.featuredImage,
                 featuredImageAlt: activeStory.featuredImageAlt,
                 modal: activeStory.modal,
+                impactHighlights:
+                  activeStory.modal.hideTopMetrics || activeStory.footerTags.length === 0
+                    ? undefined
+                    : activeStory.footerTags,
               }
             : null
         }

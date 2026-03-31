@@ -60,15 +60,15 @@ function fallbackPortfolioData(): PortfolioData {
     content: {
       hero_name: "Jayita Sharma",
       hero_title:
-        "I build products people trust, systems that scale, and growth that compounds.",
+        "Product Lead · Growth Strategist · AI Automation Architect",
       hero_summary:
-        "From marketplace platforms to AI automation — I work at the intersection of user insight and business impact.",
+        "I turn user insights into scalable products, growth systems, and AI automations that drive adoption, retention, and operational efficiency",
       about:
-        "2.5+ years across AI and auto-tech with experience in taxonomy, discovery UX, and growth systems.",
-      highlight_1: "2.5+ years experience",
-      highlight_2: "250+ DAU in first month",
-      highlight_3: "3 enterprise clients onboarded in month one",
-      highlight_4: "~500K additional monthly visits driven",
+        "Product & Growth — aggregators, marketplaces, discovery UX, SEO-led scale, and AI automation.",
+      highlight_1: "500K+ incremental monthly visits (organic)",
+      highlight_2: "250+ DAU · 3 enterprise clients (month one)",
+      highlight_3: "1,000+ AI tools · 30+ categories (taxonomy & IA)",
+      highlight_4: "40% fewer content errors · 60% faster CMS publishing",
     },
     projects: [],
     experience: [],
