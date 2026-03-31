@@ -35,8 +35,8 @@ export function FeaturedWorkZ({ stories, projects }: Props) {
   if (!list.length) return null;
 
   return (
-    <section id="featured" className="featured-work">
-      <SectionTitle line={false}>Featured Product Work</SectionTitle>
+    <section id="featured" className="featured-work" aria-labelledby="featured-heading">
+      <SectionTitle id="featured-heading">Featured Product Work</SectionTitle>
       <FeaturedWorkInteractive stories={list} />
     </section>
   );

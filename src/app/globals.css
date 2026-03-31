@@ -458,6 +458,52 @@ a:hover {
   padding-right: clamp(0px, 2vw, 20px);
 }
 
+/**
+ * Role line width defines the measure; summary matches it (see --hero-headline-w
+ * set in HeroHeadlineGroup after measuring .hero-section__headline-ruler).
+ */
+.hero-section__headline-group {
+  display: inline-grid;
+  grid-template-columns: min-content;
+  justify-items: stretch;
+  max-width: 100%;
+  min-width: 0;
+  vertical-align: top;
+}
+
+.hero-section__headline-group--measured {
+  display: block;
+}
+
+.hero-section__headline-ruler {
+  width: max-content;
+  max-width: 100%;
+}
+
+.hero-section__headline-group--measured .hero-section__summary {
+  width: min(var(--hero-headline-w), 100%);
+  box-sizing: border-box;
+}
+
+/** Desktop: let the hero summary use the full copy column (wider than the role line). */
+@media (min-width: 901px) {
+  .hero-section__headline-group {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: unset;
+  }
+
+  .hero-section__headline-group--measured .hero-section__summary {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.hero-section__headline-group .hero-section__lede {
+  max-width: 100%;
+}
+
 .hero-section__intro {
   display: block;
   margin: 0 0 18px;
@@ -546,13 +592,12 @@ a:hover {
 .hero-section__summary {
   color: rgba(168, 168, 168, 0.98);
   margin: 0 0 34px;
-  /* Wider measure + slightly smaller type so the hero one-liner lands on ≤2 lines on laptop */
-  max-width: min(66ch, 100%);
+  max-width: 100%;
+  min-width: 0;
   line-height: 1.48;
   font-style: normal;
-  font-size: clamp(0.88rem, 1.42vw, 0.97rem);
+  font-size: clamp(1.02rem, 1.62vw, 1.14rem);
   font-weight: 400;
-  text-wrap: balance;
 }
 
 .btn-gold-outline {
@@ -681,7 +726,6 @@ a:hover {
   }
 
   .hero-section__summary {
-    font-size: clamp(0.84rem, 2.05vw, 0.93rem);
     line-height: 1.46;
     max-width: 100%;
   }
@@ -759,18 +803,61 @@ a:hover {
   font-weight: 600;
   color: var(--text);
   line-height: 1.38;
+  overflow-wrap: break-word;
 }
 
 .institution-strip__role {
   font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.45;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 900px) {
   .institution-strip__list {
     grid-template-columns: 1fr;
     gap: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .institution-strip {
+    padding: 44px 0 40px;
+  }
+
+  .institution-strip__list {
+    gap: 18px;
+  }
+
+  .institution-strip__item {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .institution-strip__circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .institution-strip__name {
+    font-size: clamp(0.88rem, 3.6vw, 0.94rem);
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+
+  .institution-strip__role {
+    font-size: clamp(0.74rem, 3.1vw, 0.82rem);
+    line-height: 1.48;
+  }
+}
+
+@media (max-width: 480px) {
+  .institution-strip__list {
+    gap: 16px;
+  }
+
+  .institution-strip__item {
+    gap: 10px;
   }
 }
 
@@ -784,27 +871,6 @@ a:hover {
   .institution-strip {
     padding-top: 42px;
     padding-bottom: 42px;
-  }
-
-  .site-footer__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .site-footer__actions .btn-gold-outline,
-  .site-footer__hello {
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .site-footer__lead {
-    font-size: 0.95rem;
-    padding: 0 4px;
   }
 }
 
@@ -910,6 +976,42 @@ a:hover {
   margin-bottom: 0;
 }
 
+.about-section__body--clamped .about-section__para {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+  overflow: hidden;
+}
+
+.about-section__read-toggle {
+  display: inline-flex;
+  align-items: center;
+  margin: 14px 0 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.about-section__read-toggle:hover {
+  color: #e8d48a;
+}
+
+.about-section__read-toggle:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .about-section__closing {
   margin: 1.75em 0 0;
   padding-left: 14px;
@@ -924,29 +1026,6 @@ a:hover {
 .about-highlight {
   color: #2d8a69;
   font-weight: 500;
-}
-
-.about-section__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.about-tag {
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--muted);
-  padding: 6px 12px;
-  border-radius: var(--radius-chip);
-  font-size: 0.85rem;
-  transition:
-    border-color 0.15s ease,
-    background 0.15s ease;
-}
-
-.about-tag:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.05);
 }
 
 /* ——— Skills ——— */
@@ -972,26 +1051,17 @@ a:hover {
   margin-top: 20px;
 }
 
-/** Simple rows — no extra chrome */
+/** Vertical rhythm: tighter between blocks than header→chips so groups read as units */
 .skills-section__block {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--panel-border);
+  padding: 12px 0;
 }
 
 .skills-section__block:first-child {
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 .skills-section__block:last-child {
-  border-bottom: none;
   padding-bottom: 0;
-}
-
-.skills-section__block-head {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 12px 22px;
-  align-items: start;
 }
 
 .skills-section__block-copy {
@@ -999,23 +1069,93 @@ a:hover {
   width: 100%;
 }
 
-/** Title + description: auto-width title column so copy sits close beside it */
+/**
+ * Index, title, and description share one typographic row on desktop (baseline-aligned).
+ * Chips sit below full-width so they line up with the section’s left edge (same as index).
+ */
 .skills-section__block-lede {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: clamp(14px, 2.2vw, 22px);
+  min-width: 0;
+  column-gap: clamp(8px, 1.5vw, 14px);
   row-gap: 8px;
-  align-items: start;
+}
+
+@media (min-width: 721px) {
+  /** Uniform tight gutters: index→title and title→description */
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-rows: auto;
+    align-items: baseline;
+    column-gap: clamp(5px, 0.55vw, 9px);
+  }
+
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) .skills-section__index {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) .skills-section__block-title {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: 17rem;
+  }
+
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) .skills-section__block-desc {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .skills-section__block-lede--no-index {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: clamp(6px, 0.75vw, 11px);
+  }
+
+  .skills-section__block-lede--no-index .skills-section__block-title {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 17rem;
+  }
+
+  .skills-section__block-lede--no-index .skills-section__block-desc {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
 }
 
 .skills-section__index {
-  font-size: 0.82rem;
+  font-size: clamp(1rem, 2.35vw, 1.18rem);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
-  color: #5ee0b5;
-  line-height: 1.35;
-  padding-top: 0.2em;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/** Match each row’s chip text colour (see .skills-chip--*). */
+.skills-section__index--mint {
+  color: #9ae8c9;
+}
+
+.skills-section__index--lavender {
+  color: #d8cffd;
+}
+
+.skills-section__index--sand {
+  color: #e8d5a0;
+}
+
+.skills-section__index--ice {
+  color: #9fdcf8;
+}
+
+.skills-section__index--amber {
+  color: #fcd34d;
+}
+
+.skills-section__index--tools {
+  color: #e8d9a4;
 }
 
 .skills-section__block-title {
@@ -1025,8 +1165,8 @@ a:hover {
   margin: 0;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  max-width: 17rem;
   text-wrap: balance;
+  min-width: 0;
 }
 
 .skills-section__block-desc {
@@ -1040,7 +1180,7 @@ a:hover {
 }
 
 .skills-section__block--tools {
-  padding-top: 28px;
+  padding-top: 22px;
 }
 
 .skills-section__tools-heading {
@@ -1055,20 +1195,21 @@ a:hover {
 .skills-section__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 10px;
+  row-gap: 12px;
+  column-gap: 11px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .skills-section__block-copy > .skills-section__chips {
-  margin-top: 12px;
+  margin-top: 22px;
 }
 
 .skills-chip {
   font-size: 0.78rem;
   font-weight: 500;
-  padding: 6px 11px;
+  padding: 8px 14px;
   border-radius: var(--radius-chip);
   line-height: 1.35;
 }
@@ -1104,36 +1245,116 @@ a:hover {
   border: 1px solid rgba(125, 211, 252, 0.38);
 }
 
+.skills-chip--amber {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fcd34d;
+  border: 1px solid rgba(251, 191, 36, 0.42);
+}
+
 .skills-chip--tools {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(240, 240, 240, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(212, 175, 55, 0.1);
+  color: #e8d9a4;
+  border: 1px solid rgba(212, 175, 55, 0.32);
 }
 
 @media (max-width: 720px) {
-  .skills-section__block-lede {
+  /** Title + index on row 1; description full width row 2 — chips align with block left (index column). */
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: baseline;
+    row-gap: 8px;
+  }
+
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) .skills-section__block-title {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: none;
+  }
+
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) .skills-section__index {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: baseline;
+    padding-top: 0.22em;
+  }
+
+  .skills-section__block-lede:not(.skills-section__block-lede--no-index) .skills-section__block-desc {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .skills-section__block-lede--no-index {
     grid-template-columns: 1fr;
-    gap: 8px;
+    grid-template-rows: auto auto;
+    align-items: start;
+    row-gap: 8px;
+  }
+
+  .skills-section__block-lede--no-index .skills-section__block-title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .skills-section__block-lede--no-index .skills-section__block-desc {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-section__intro {
+    font-size: clamp(0.92rem, 3.8vw, 1.02rem);
+    line-height: 1.62;
+    margin-bottom: 14px;
+  }
+
+  .skills-section__blocks {
+    margin-top: 16px;
+  }
+
+  .skills-section__block {
+    padding: 11px 0;
+  }
+
+  .skills-section__block-copy > .skills-section__chips {
+    margin-top: 18px;
+  }
+
+  .skills-section__block-title {
+    font-size: clamp(0.98rem, 4vw, 1.08rem);
+  }
+
+  .skills-section__block-desc {
+    font-size: clamp(0.86rem, 3.4vw, 0.93rem);
+    line-height: 1.55;
+  }
+
+  .skills-section__index {
+    font-size: clamp(0.94rem, 3.9vw, 1.08rem);
+    line-height: 1.15;
+  }
+
+  .skills-section__chips {
+    row-gap: 11px;
+    column-gap: 9px;
+  }
+
+  .skills-chip {
+    font-size: clamp(0.72rem, 2.8vw, 0.78rem);
+    padding: 8px 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .skills-section__block-head {
-    gap: 8px 14px;
-  }
-
-  .skills-section__index {
-    padding-top: 0.15em;
+  .skills-section__block--tools .skills-section__tools-heading {
+    font-size: 0.68rem;
   }
 }
 
 /* ——— Featured Z ——— */
 .featured-work {
   padding: 56px 0;
-}
-
-.featured-work > .section-title__text--solo {
-  margin-bottom: 40px;
 }
 
 .featured-work .section-title {
@@ -1549,10 +1770,31 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  /**
+   * Mobile: same stack for every card — head (index + title + badge) → image → body (lede + CTA).
+   * Flex order fixes even rows where DOM was head → body → visual.
+   */
   .featured-work__row--media-left .featured-work__row-split,
   .featured-work__row--media-right .featured-work__row-split {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     row-gap: 20px;
+  }
+
+  .featured-work__split-head {
+    order: 1;
+    width: 100%;
+  }
+
+  .featured-work__col--visual {
+    order: 2;
+    width: 100%;
+  }
+
+  .featured-work__col--body {
+    order: 3;
+    width: 100%;
   }
 
   .featured-work__row--media-left .featured-work__split-head,
@@ -1563,6 +1805,24 @@ a:hover {
   .featured-work__row--media-right .featured-work__col--body {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  /** Index on the right of the title for every card (DOM alternates step-trail vs step-lead). */
+  .featured-work__row-head-cluster {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .featured-work__row-head-cluster--step-trail .featured-work__z-step {
+    margin-left: auto;
+  }
+
+  .featured-work__row-head-cluster--step-lead {
+    flex-direction: row-reverse;
+  }
+
+  .featured-work__row-head-cluster--step-lead .featured-work__z-step {
+    margin-left: 0;
   }
 
   .featured-work__list {
@@ -1592,7 +1852,7 @@ a:hover {
 
 @media (max-width: 640px) {
   .featured-work__row-head-cluster {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px 14px;
   }
 
@@ -1622,14 +1882,6 @@ a:hover {
   padding: 56px 0;
 }
 
-.more-projects__lede {
-  margin: -12px 0 24px;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  text-wrap: pretty;
-  max-width: 62ch;
-}
-
 /**
  * Scannable list: one row per project (thumb + copy), so many items read top-to-bottom
  * instead of cramming into a fixed 3-column grid.
@@ -1644,6 +1896,7 @@ a:hover {
   display: grid;
   grid-template-columns: clamp(160px, 30vw, 280px) minmax(0, 1fr);
   align-items: stretch;
+  min-width: 0;
   background: var(--panel);
   border: 1px solid var(--panel-border);
   border-radius: 12px;
@@ -1757,7 +2010,15 @@ a:hover {
   margin-top: 2px;
 }
 
-@media (max-width: 640px) {
+/**
+ * Mobile / tablet: same breakpoint as featured work — single column, image full width on top.
+ * DOM order is already cover → body (category → title → excerpt → CTA).
+ */
+@media (max-width: 900px) {
+  .more-projects__grid {
+    gap: clamp(16px, 3vw, 22px);
+  }
+
   .more-projects__card {
     grid-template-columns: 1fr;
   }
@@ -1765,6 +2026,40 @@ a:hover {
   .more-projects__cover {
     border-right: none;
     border-bottom: 1px solid var(--panel-border);
+  }
+
+  .more-projects__body {
+    padding: 18px 16px 20px;
+  }
+
+  .more-projects__excerpt {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .more-projects__title {
+    font-size: clamp(0.98rem, 4.2vw, 1.08rem);
+    line-height: 1.4;
+  }
+
+  .more-projects__excerpt {
+    font-size: clamp(0.86rem, 3.5vw, 0.92rem);
+    line-height: 1.58;
+  }
+
+  .more-projects__body {
+    padding: 16px 14px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .more-projects__grid {
+    gap: 12px;
+  }
+
+  .more-projects__card {
+    border-radius: 10px;
   }
 }
 
@@ -1795,6 +2090,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-width: 0;
   background: var(--panel);
   border: 1px solid var(--panel-border);
   border-radius: 12px;
@@ -1992,6 +2288,46 @@ a:hover {
   line-height: 1.5;
   text-align: center;
   color: var(--muted);
+}
+
+/** Narrow viewports: single-column grid, comfortable gaps, fluid type, larger arrow hit area. */
+@media (max-width: 640px) {
+  .consulting-decks__grid {
+    gap: clamp(14px, 4vw, 20px);
+  }
+
+  .consulting-decks__body {
+    padding: 14px 14px 16px;
+    gap: 10px;
+  }
+
+  .consulting-decks__headline {
+    font-size: clamp(0.95rem, 4.2vw, 1.05rem);
+    line-height: 1.38;
+  }
+
+  .consulting-decks__subtitle {
+    margin-top: 6px;
+    font-size: clamp(0.82rem, 3.6vw, 0.9rem);
+    line-height: 1.52;
+  }
+
+  .consulting-decks__arrow-wrap {
+    padding: 6px;
+    margin: -6px -4px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .consulting-decks__card {
+    border-radius: 10px;
+  }
+
+  .consulting-decks__footnote {
+    margin-top: 22px;
+    padding: 0 6px;
+    font-size: 0.86rem;
+  }
 }
 
 /* ——— Writing & Thinking ——— */
@@ -2319,16 +2655,20 @@ a:hover {
 }
 
 .site-footer__title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(1.5rem, 2.5vw + 0.85rem, 2.75rem);
   font-weight: 700;
   margin: 0 0 12px;
   color: var(--text);
+  line-height: 1.12;
 }
 
 .site-footer__lead {
   color: var(--muted);
-  margin: 0 0 24px;
+  margin: 0 auto 24px;
+  max-width: 36rem;
   font-size: 1rem;
+  line-height: 1.55;
+  overflow-wrap: break-word;
 }
 
 .site-footer__actions {
@@ -2345,16 +2685,87 @@ a:hover {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text);
+  text-decoration: none;
 }
 
 .site-footer__hello:hover {
   color: var(--gold);
+  text-decoration: none;
 }
-
 
 .site-footer__copy {
   font-size: 0.85rem;
   margin: 0;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding: 48px 0 max(32px, env(safe-area-inset-bottom, 0px));
+  }
+
+  .site-footer__title {
+    font-size: clamp(1.42rem, 5.2vw + 0.55rem, 2.35rem);
+    margin-bottom: 10px;
+  }
+
+  .site-footer__lead {
+    font-size: clamp(0.9rem, 2.4vw + 0.65rem, 1rem);
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+
+  .site-footer__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    max-width: min(360px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+  }
+
+  .site-footer__actions .btn-gold-outline,
+  .site-footer__hello {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
+    padding: 12px 18px;
+  }
+
+  .site-footer__hello {
+    font-size: clamp(1.05rem, 3.2vw, 1.2rem);
+    border-radius: 4px;
+  }
+
+  .site-footer__actions .btn-gold-outline {
+    font-size: 0.95rem;
+  }
+
+  .site-footer__copy {
+    font-size: 0.8rem;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 42px 0 max(28px, env(safe-area-inset-bottom, 0px));
+  }
+
+  .site-footer__actions {
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .site-footer__lead {
+    margin-bottom: 18px;
+    padding: 0 2px;
+  }
 }
 
 /* ——— Fixed left contact rail (desktop) ——— */

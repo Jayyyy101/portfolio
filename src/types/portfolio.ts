@@ -62,7 +62,7 @@ export type WritingGroup = {
 };
 
 /** Coloured skill pill preset (matches section group). */
-export type SkillsChipVariant = "mint" | "lavender" | "sand" | "ice" | "tools";
+export type SkillsChipVariant = "mint" | "lavender" | "sand" | "ice" | "amber" | "tools";
 
 export type SkillsCategory = {
   id: string;
@@ -216,8 +216,6 @@ export type PortfolioData = {
   aboutParagraphs?: AboutSegment[][];
   /** Bold line under body, e.g. call-to-action (styled with left accent) */
   aboutClosingLine?: string;
-  /** Pills under About; omit to hide */
-  aboutTags?: string[];
   /** Featured work — full story cards (preferred over `projects[].featured`) */
   featuredStories?: FeaturedStory[];
   /** Smaller cards in “More projects” grid */

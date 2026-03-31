@@ -1,3 +1,6 @@
+"use client";
+
+import { useId, useMemo, useState } from "react";
 import { SectionTitle } from "@/components/portfolio/SectionTitle";
 import type { AboutSegment } from "@/types/portfolio";
 
@@ -6,8 +9,9 @@ type Props = {
   /** Fallback single block when `paragraphs` is empty */
   fallbackBody?: string;
   closingLine?: string;
-  tags?: string[];
 };
+
+const FALLBACK_COLLAPSE_MIN_CHARS = 320;
 
 function Paragraph({ segments }: { segments: AboutSegment[] }) {
   return (
@@ -25,30 +29,51 @@ function Paragraph({ segments }: { segments: AboutSegment[] }) {
   );
 }
 
-export function AboutSection({ paragraphs, fallbackBody, closingLine, tags }: Props) {
+export function AboutSection({ paragraphs, fallbackBody, closingLine }: Props) {
+  const [expanded, setExpanded] = useState(false);
+  const bodyId = useId();
   const hasStructured = paragraphs.length > 0;
-  const tagList = tags?.length ? tags : null;
+
+  const showReadMore = useMemo(() => {
+    if (hasStructured) return paragraphs.length > 1;
+    return Boolean(fallbackBody && fallbackBody.length >= FALLBACK_COLLAPSE_MIN_CHARS);
+  }, [hasStructured, paragraphs.length, fallbackBody]);
+
+  const visibleStructured = hasStructured
+    ? expanded
+      ? paragraphs
+      : paragraphs.slice(0, 1)
+    : [];
 
   return (
     <section id="about" className="about-section">
       <SectionTitle>About Me</SectionTitle>
-      <div className="about-section__body">
+      <div
+        id={bodyId}
+        className={
+          showReadMore && !expanded && !hasStructured && fallbackBody
+            ? "about-section__body about-section__body--clamped"
+            : "about-section__body"
+        }
+      >
         {hasStructured ? (
-          paragraphs.map((segs, idx) => <Paragraph key={idx} segments={segs} />)
+          visibleStructured.map((segs, idx) => <Paragraph key={idx} segments={segs} />)
         ) : (
           <p className="about-section__para">{fallbackBody}</p>
         )}
       </div>
-      {closingLine ? <p className="about-section__closing">{closingLine}</p> : null}
-      {tagList ? (
-        <div className="about-section__tags">
-          {tagList.map((label) => (
-            <span key={label} className="about-tag">
-              {label}
-            </span>
-          ))}
-        </div>
+      {showReadMore ? (
+        <button
+          type="button"
+          className="about-section__read-toggle"
+          aria-expanded={expanded}
+          aria-controls={bodyId}
+          onClick={() => setExpanded((e) => !e)}
+        >
+          {expanded ? "Read less" : "Read more"}
+        </button>
       ) : null}
+      {closingLine ? <p className="about-section__closing">{closingLine}</p> : null}
     </section>
   );
 }

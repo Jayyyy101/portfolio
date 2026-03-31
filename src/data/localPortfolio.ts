@@ -40,14 +40,6 @@ export const localPortfolioData: PortfolioData = {
     ],
   ],
   aboutClosingLine: "The only question is what we build next.",
-  aboutTags: [
-    "AI-native products",
-    "Discovery architecture",
-    "Growth automation",
-    "0→1 building",
-    "Marketplace & aggregators",
-    "SEO-led growth",
-  ],
   featuredStories: [
     {
       id: "story-thatsmyai",
@@ -488,10 +480,9 @@ export const localPortfolioData: PortfolioData = {
           "AI agent design",
           "Prompt engineering",
           "Content automation",
-          "RSS feed integration",
+          "API Integration",
           "Rule engine design",
           "Agentic systems",
-          "AI tools evaluation",
           "Workflow architecture",
         ],
       },
@@ -501,7 +492,7 @@ export const localPortfolioData: PortfolioData = {
         title: "Building platforms",
         description:
           "Marketplace and aggregator mechanics — discovery, taxonomy, and listings that work at scale.",
-        variant: "sand",
+        variant: "amber",
         items: [
           "Aggregator platforms",
           "Discovery UX",

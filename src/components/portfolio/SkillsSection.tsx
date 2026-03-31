@@ -1,5 +1,9 @@
 import { SectionTitle } from "@/components/portfolio/SectionTitle";
-import type { SkillsSectionData } from "@/types/portfolio";
+import type { SkillsChipVariant, SkillsSectionData } from "@/types/portfolio";
+
+function chipClass(variant: SkillsChipVariant): string {
+  return `skills-chip skills-chip--${variant}`;
+}
 
 type Props = {
   data: SkillsSectionData;
@@ -31,7 +35,7 @@ export function SkillsSection({ data }: Props) {
               <h3 className="skills-section__tools-heading">{cat.title}</h3>
               <ul className="skills-section__chips" aria-label={cat.title}>
                 {cat.items.map((item) => (
-                  <li key={`${cat.id}-${item}`} className="skills-chip skills-chip--neutral">
+                  <li key={`${cat.id}-${item}`} className={chipClass(cat.variant)}>
                     {item}
                   </li>
                 ))}
@@ -39,23 +43,30 @@ export function SkillsSection({ data }: Props) {
             </div>
           ) : (
             <div key={cat.id} className="skills-section__block">
-              <div className="skills-section__block-head">
-                {cat.index ? <span className="skills-section__index">{cat.index}</span> : null}
-                <div className="skills-section__block-copy">
-                  <div className="skills-section__block-lede">
-                    <h3 className="skills-section__block-title">{cat.title}</h3>
-                    {cat.description ? (
-                      <p className="skills-section__block-desc">{cat.description}</p>
-                    ) : null}
-                  </div>
-                  <ul className="skills-section__chips" aria-label={cat.title}>
-                    {cat.items.map((item) => (
-                      <li key={`${cat.id}-${item}`} className="skills-chip skills-chip--neutral">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+              <div className="skills-section__block-copy">
+                <div
+                  className={
+                    "skills-section__block-lede" +
+                    (cat.index ? "" : " skills-section__block-lede--no-index")
+                  }
+                >
+                  {cat.index ? (
+                    <span className={`skills-section__index skills-section__index--${cat.variant}`}>
+                      {cat.index}
+                    </span>
+                  ) : null}
+                  <h3 className="skills-section__block-title">{cat.title}</h3>
+                  {cat.description ? (
+                    <p className="skills-section__block-desc">{cat.description}</p>
+                  ) : null}
                 </div>
+                <ul className="skills-section__chips" aria-label={cat.title}>
+                  {cat.items.map((item) => (
+                    <li key={`${cat.id}-${item}`} className={chipClass(cat.variant)}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           )

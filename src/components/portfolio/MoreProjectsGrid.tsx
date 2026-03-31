@@ -28,9 +28,6 @@ export function MoreProjectsGrid({ items }: Props) {
     <>
       <section id="more-projects" className="more-projects">
         <SectionTitle>More product work</SectionTitle>
-        <p className="more-projects__lede muted">
-          Shorter write-ups on work that didn&apos;t sit in the featured row — same rigour, smaller canvas.
-        </p>
         <div className="more-projects__grid">
           {items.map((item) => {
             const variant = item.badgeVariant ?? "mint";
@@ -43,7 +40,7 @@ export function MoreProjectsGrid({ items }: Props) {
                       alt={item.coverImageAlt ?? ""}
                       fill
                       className="more-projects__cover-img"
-                      sizes="(max-width: 640px) 100vw, min(280px, 35vw)"
+                      sizes="(max-width: 900px) 100vw, min(280px, 35vw)"
                     />
                   ) : (
                     <CoverPlaceholder label={item.category} />

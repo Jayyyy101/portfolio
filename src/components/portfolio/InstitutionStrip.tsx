@@ -16,7 +16,7 @@ export function InstitutionStrip() {
               alt="Google"
               fill
               className="institution-strip__img institution-strip__img--contain"
-              sizes="56px"
+              sizes="(max-width: 640px) 48px, 56px"
             />
           </div>
           <div className="institution-strip__text">
@@ -31,7 +31,7 @@ export function InstitutionStrip() {
               alt="Indian Institute of Technology Roorkee"
               fill
               className="institution-strip__img institution-strip__img--contain"
-              sizes="56px"
+              sizes="(max-width: 640px) 48px, 56px"
             />
           </div>
           <div className="institution-strip__text">
@@ -46,7 +46,7 @@ export function InstitutionStrip() {
               alt="University of Delhi"
               fill
               className="institution-strip__img institution-strip__img--contain"
-              sizes="56px"
+              sizes="(max-width: 640px) 48px, 56px"
             />
           </div>
           <div className="institution-strip__text">

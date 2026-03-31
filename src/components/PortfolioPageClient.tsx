@@ -40,7 +40,6 @@ export function PortfolioPageClient({ data }: Props) {
             "Jayita works across product strategy, discovery architecture, and growth systems."
           }
           closingLine={data.aboutClosingLine}
-          tags={data.aboutTags}
         />
         <FeaturedWorkZ stories={data.featuredStories} projects={data.projects} />
         {data.moreProjects && data.moreProjects.length > 0 ? (

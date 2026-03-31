@@ -1,31 +1,6 @@
-import { Fragment } from "react";
 import Image from "next/image";
+import { HeroHeadlineGroup } from "@/components/portfolio/HeroHeadlineGroup";
 import { HeroTypingIntro } from "@/components/portfolio/HeroTypingIntro";
-
-const HERO_TITLE_SEP = /\s*·\s*/;
-
-function HeroTitleLine({ text }: { text: string }) {
-  const parts = text
-    .split(HERO_TITLE_SEP)
-    .map((s) => s.trim())
-    .filter(Boolean);
-  const labels = parts.length <= 1 ? (text.trim() ? [text.trim()] : []) : parts;
-  if (labels.length === 0) return null;
-  return (
-    <p className="hero-section__tagline hero-section__tagline--rail" role="text">
-      {labels.map((label, i) => (
-        <Fragment key={`${i}-${label.slice(0, 32)}`}>
-          {i > 0 ? (
-            <span className="hero-section__tagline-mid" aria-hidden="true">
-              ·
-            </span>
-          ) : null}
-          <span className="hero-section__tagline-chunk">{label}</span>
-        </Fragment>
-      ))}
-    </p>
-  );
-}
 
 type Props = {
   name: string;
@@ -50,9 +25,7 @@ export function HeroSection({
       <div className="hero-section__copy">
         <HeroTypingIntro />
         <h1 className="hero-section__name">{name}</h1>
-        <HeroTitleLine text={title} />
-        {tagline ? <p className="hero-section__lede">{tagline}</p> : null}
-        <p className="hero-section__summary">{summary}</p>
+        <HeroHeadlineGroup title={title} tagline={tagline} summary={summary} />
         <a className="hero-section__cta btn-gold-outline" href={ctaHref}>
           {ctaLabel}
         </a>
