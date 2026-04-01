@@ -17,7 +17,7 @@ export function HeroSection({
   title,
   tagline,
   summary,
-  ctaLabel = "See my work",
+  ctaLabel = "View my work",
   ctaHref = "#featured",
 }: Props) {
   return (

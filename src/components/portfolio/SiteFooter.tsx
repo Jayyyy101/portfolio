@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer id="contact" className="site-footer">
       <h2 className="site-footer__title">Get In Touch</h2>
       <p className="site-footer__lead">
-        Have something in mind — a role, a project, or just a conversation? I&apos;d love to hear from you.
+        If you&apos;re building something ambitious — a product, a platform, or an AI system that needs to actually work — I&apos;d love to be part of it.
       </p>
       <div className="site-footer__actions">
         <a className="site-footer__hello" href="mailto:jayitasharma111@gmail.com">

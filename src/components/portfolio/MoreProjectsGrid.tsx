@@ -40,7 +40,7 @@ export function MoreProjectsGrid({ items }: Props) {
                       alt={item.coverImageAlt ?? ""}
                       fill
                       className="more-projects__cover-img"
-                      sizes="(max-width: 900px) 100vw, min(280px, 35vw)"
+                      sizes="(max-width: 900px) 100vw, min(300px, 32vw)"
                     />
                   ) : (
                     <CoverPlaceholder label={item.category} />

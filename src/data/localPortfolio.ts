@@ -552,6 +552,293 @@ export const localPortfolioData: PortfolioData = {
   ],
   moreProjects: [
     {
+      id: "more-ai-fintech-strategy",
+      title: "AI in Fintech — Secured & Unsecured Loans + Insurance",
+      description:
+        "AI strategy framework for Indian lending and insurance: credit-invisible populations, loan discovery, alternative-data scoring, underwriting speed, and insurance penetration.",
+      category: "AI Strategy",
+      badgeVariant: "mint",
+      coverImage: "/featured/more-ai-fintech-loans-insurance.jpg",
+      coverImageAlt:
+        "Infographic on light grey: AI in Fintech — 10 use cases hub with credit scoring and lending, fraud detection, risk, robo-advisors, and cybersecurity",
+      modal: {
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
+        modalTags: [
+          "AI strategy",
+          "Fintech",
+          "Credit scoring",
+          "Underwriting",
+          "Insurance",
+          "India",
+          "Loan discovery",
+          "Alternative data",
+        ],
+        blocks: [
+          {
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "India's fintech sector raised $1.6 billion in H1 2025 alone — the most funded sector in the country. Yet millions of Indians still can't access credit because the system doesn't know how to evaluate them. Traditional credit scoring excludes the self-employed, the gig worker, the first-time borrower. I built the AI strategy framework that changes that — across loan discovery, credit scoring, underwriting, and insurance.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "India has over 190 million credit-invisible citizens — people who exist outside the formal credit system. Not because they can't repay, but because traditional models can't see them. At the same time, lenders face rising fraud, slow underwriting, and insurance products nobody understands. ",
+              },
+              {
+                text: "The data exists. The intelligence to use it doesn't.",
+                strong: true,
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "dashBullets",
+            heading: "What I discovered",
+            items: [
+              "58% of banks have adopted AI-powered credit scoring in 2025 — but most still rely on CIBIL scores alone, missing alternative data signals like UPI transaction history, GST filings, and rental behaviour.",
+              "Loan discovery is broken — most users don't know what loan they qualify for, what rate is fair, or which lender to trust. Discovery UX is the missing layer.",
+              "AI-driven underwriting models have boosted loan approval speed by 35–40% — but adoption in India's NBFC and lending ecosystem remains fragmented.",
+              "Insurance penetration in India sits at just 4.2% — not because people don't need it, but because products are complex, discovery is poor, and claims feel adversarial.",
+            ],
+          },
+          { type: "divider" },
+          { type: "subheading", text: "The strategy framework" },
+          {
+            type: "richParagraph",
+            heading: "Loan discovery",
+            segments: [
+              {
+                text: "Intent-first UX that matches borrowers to the right product — secured vs unsecured, rate ranges, eligibility — before they apply.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "AI credit scoring",
+            segments: [
+              {
+                text: "Alternative data models using UPI history, GST filings, and behavioural signals to score the credit-invisible population.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Automated underwriting",
+            segments: [
+              {
+                text: "AI-driven document verification, fraud detection, and risk decisioning — reducing approval time from days to minutes.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Insurance reimagined",
+            segments: [
+              {
+                text: "Simplified discovery, AI-matched products, and claims automation — making insurance feel like a service, not a trap.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Market context",
+            stats: [
+              {
+                value: "$1.6B",
+                label: "Fintech funding in India H1 2025 — most funded sector",
+              },
+              {
+                value: "190M+",
+                label: "Credit-invisible Indians excluded by traditional scoring",
+              },
+              {
+                value: "4.2%",
+                label: "Insurance penetration in India — the gap AI can close",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "Fintech's real problem isn't technology — it's trust and discovery. People don't take loans because they don't understand them. They don't buy insurance because they don't trust it. AI doesn't just speed up the process — it can rebuild the relationship between financial products and the people who need them most.",
+          },
+        ],
+        primaryAction: {
+          label: "View presentation",
+          href: "https://app.presentations.ai/view/5aPhRo",
+        },
+        secondaryAction: { label: "View resume", href: RESUME_PATH },
+      },
+    },
+    {
+      id: "more-analytics-framework",
+      title: "End-to-End Analytics & Tracking Framework",
+      description:
+        "Unified funnel analytics from acquisition through retention — one reporting layer, drop-off visibility, and decisions based on a single source of truth.",
+      category: "Product & Growth",
+      badgeVariant: "ice",
+      coverImage: "/featured/more-end-to-end-analytics.jpg",
+      coverImageAlt:
+        "Infographic: What is end-to-end analytics — data sources flowing through CRM into unified data analytics",
+      modal: {
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
+        modalTags: [
+          "Analytics",
+          "Growth",
+          "Funnel",
+          "Retention",
+          "Mixpanel",
+          "GA4",
+          "Looker Studio",
+          "Tag management",
+        ],
+        blocks: [
+          {
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "Most products don't fail because of bad features. They fail because nobody knew which features were working, where users were dropping off, or why retention was quietly collapsing. I designed an end-to-end analytics and tracking framework — from first impression to long-term retention — that gives product and growth teams a single source of truth to make decisions from.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "Most teams track acquisition well and retention poorly. Marketing owns the top of funnel. Product owns the bottom. Nobody owns the middle — and that's where growth dies. ",
+              },
+              {
+                text: "Data exists in silos. Decisions get made on gut feel. Problems get discovered months after they started.",
+                strong: true,
+              },
+            ],
+          },
+          { type: "divider" },
+          { type: "subheading", text: "The framework — stage by stage" },
+          {
+            type: "richParagraph",
+            heading: "Acquisition",
+            segments: [
+              {
+                text: "Traffic source, CAC, impressions, channel mix — where are users coming from and what does it cost to get them?",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Activation",
+            segments: [
+              {
+                text: "Sign-up rate, time to first value, onboarding completion — did users experience the core value fast enough to stay?",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Engagement",
+            segments: [
+              {
+                text: "DAU/MAU, session depth, feature adoption, drop-off points — are users actually using the product or just visiting?",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Conversion",
+            segments: [
+              {
+                text: "Funnel conversion rate, checkout completion, lead-to-close — where is the funnel leaking and why?",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Retention",
+            segments: [
+              {
+                text: "Churn rate, cohort retention, DAU/MAU ratio, NPS — who's coming back and who's quietly leaving?",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Revenue",
+            segments: [
+              {
+                text: "LTV, ARPU, NRR, expansion revenue — is growth coming from new users or from existing ones doing more?",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "dashBullets",
+            heading: "What the dashboard shows",
+            items: [
+              "A single funnel view — from traffic to revenue — so every team sees the same picture at the same time.",
+              "Drop-off alerts at every stage — so problems surface in days, not months.",
+              "Cohort analysis — so you can see if retention is improving over time, not just in aggregate.",
+              "Channel attribution — so budget goes where it actually converts, not where it looks good.",
+              "Automated weekly reporting — so leadership gets the signal without anyone building slides.",
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "Tools & stack",
+            segments: [
+              {
+                text: "Google Analytics · Google Search Console · Mixpanel · SEMrush · Google Tag Manager · Looker Studio — connected into one reporting layer that updates automatically.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Impact by the numbers",
+            stats: [
+              {
+                value: "35–40%",
+                label: "Faster decision-making when funnel data is unified vs siloed",
+              },
+              {
+                value: "4–10%",
+                label: "Typical conversion rate uplift when drop-off points are identified and fixed",
+              },
+              {
+                value: "Week 1",
+                label: "The most critical retention window — where most products lose users silently",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "Data without a framework is noise. A dashboard nobody acts on is decoration. The real skill isn't setting up tracking — it's knowing which questions to ask, which metrics to surface, and how to make the data impossible to ignore.",
+          },
+        ],
+        secondaryAction: { label: "View resume", href: RESUME_PATH },
+      },
+    },
+    {
       id: "more-1",
       title: "Tractor Junction — From Content to Product Thinking",
       description:
@@ -660,10 +947,9 @@ export const localPortfolioData: PortfolioData = {
       headline: "AI Consulting & Automation",
       subtitle:
         "Operating models, tooling, and delivery patterns for AI in the organisation.",
-      thumbnailSrc:
-        "https://cdn.presentations.ai/thumbnails/15688690/c3e6dd2e-c1d1-4ae5-a2d4-e434edc80392-AI_1280x720.png?v=1774994442717",
-      thumbnailAlt: "SimplySocial — AI Consulting — first slide preview (Presentations.ai)",
-      presentationUrl: "https://app.presentations.ai/view/4DTtmAEHd6",
+      thumbnailSrc: "/consulting/ai-consulting-case-study-thumb.png",
+      thumbnailAlt: "AI Consulting — Case Study — first slide preview (Presentations.ai)",
+      presentationUrl: "https://app.presentations.ai/view/dGQdQc2nbA",
     },
     {
       id: "deck-digital-transformation-growth",
@@ -678,15 +964,15 @@ export const localPortfolioData: PortfolioData = {
       presentationUrl: "https://app.presentations.ai/view/2Ura6ydfMX",
     },
     {
-      id: "deck-finance-insurance",
-      industryTag: "Finance & insurance",
-      coverInitials: "FI",
-      headline: "AI in Finance & Insurance",
-      subtitle: "Risk, lending, and customer experience reimagined with AI.",
+      id: "deck-healthcare-ai-case-study",
+      industryTag: "Healthcare",
+      coverInitials: "HC",
+      headline: "AI in HealthCare — Case Study",
+      subtitle: "Strategy and delivery patterns for AI across clinical workflows, patient experience, and care operations.",
       thumbnailSrc:
-        "https://cdn.presentations.ai/thumbnails/15801762/2cf46156-5392-41bb-8cee-6c39d57de36b_1280x720.png?v=1774994570223",
-      thumbnailAlt: "2. AI in Finance & Insurance — first slide preview (Presentations.ai)",
-      presentationUrl: "https://app.presentations.ai/view/5aPhRo",
+        "https://cdn.presentations.ai/thumbnails/28321354/bda0283b-d5df-42c2-b450-24b8c833f96c-AI_1280x720.png?v=1775002875993",
+      thumbnailAlt: "AI in HealthCare — Case Study — first slide preview (Presentations.ai)",
+      presentationUrl: "https://app.presentations.ai/view/GQeolHZcYt",
     },
   ],
   writingComingSoon: false,

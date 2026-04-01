@@ -992,42 +992,6 @@ a:hover {
   margin-bottom: 0;
 }
 
-.about-section__body--clamped .about-section__para {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 8;
-  line-clamp: 8;
-  overflow: hidden;
-}
-
-.about-section__read-toggle {
-  display: inline-flex;
-  align-items: center;
-  margin: 14px 0 0;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gold);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.15s ease, opacity 0.15s ease;
-}
-
-.about-section__read-toggle:hover {
-  color: var(--gold-bright);
-}
-
-.about-section__read-toggle:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
 .about-section__closing {
   margin: 1.75em 0 0;
   padding-left: 14px;
@@ -1910,7 +1874,7 @@ a:hover {
 
 .more-projects__card {
   display: grid;
-  grid-template-columns: clamp(160px, 30vw, 280px) minmax(0, 1fr);
+  grid-template-columns: clamp(190px, 30vw, 300px) minmax(0, 1fr);
   align-items: stretch;
   min-width: 0;
   background: var(--panel);
@@ -1927,15 +1891,15 @@ a:hover {
 .more-projects__cover {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 0;
-  align-self: start;
+  min-height: 132px;
+  align-self: stretch;
+  height: 100%;
   background: #0f0f0f;
   border-right: 1px solid var(--panel-border);
 }
 
 .more-projects__cover-img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -1967,8 +1931,8 @@ a:hover {
 .more-projects__body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 16px 18px 18px;
+  justify-content: flex-start;
+  padding: 14px 20px 14px 18px;
   gap: 0;
   min-width: 0;
 }
@@ -2013,17 +1977,16 @@ a:hover {
 }
 
 .more-projects__excerpt {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.55;
-  text-wrap: pretty;
-  max-width: 70ch;
+  max-width: none;
 }
 
 .more-projects__cta {
   align-self: flex-start;
-  margin-top: 2px;
+  margin-top: 0;
 }
 
 /**
@@ -2042,10 +2005,14 @@ a:hover {
   .more-projects__cover {
     border-right: none;
     border-bottom: 1px solid var(--panel-border);
+    height: auto;
+    max-height: none;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
   }
 
   .more-projects__body {
-    padding: 18px 16px 20px;
+    padding: 16px 16px 16px;
   }
 
   .more-projects__excerpt {
