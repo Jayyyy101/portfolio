@@ -689,9 +689,9 @@ export const localPortfolioData: PortfolioData = {
         "Unified funnel analytics from acquisition through retention — one reporting layer, drop-off visibility, and decisions based on a single source of truth.",
       category: "Product & Growth",
       badgeVariant: "ice",
-      coverImage: "/featured/more-end-to-end-analytics.jpg",
+      coverImage: "/featured/more-end-to-end-analytics.png",
       coverImageAlt:
-        "Infographic: What is end-to-end analytics — data sources flowing through CRM into unified data analytics",
+        "Google Analytics 4 dashboard mockup: KPIs, conversions chart, traffic overview, campaign table, and conversion funnel card",
       modal: {
         overview: "",
         details: "",
@@ -833,6 +833,151 @@ export const localPortfolioData: PortfolioData = {
             heading: "What this taught me",
             quote:
               "Data without a framework is noise. A dashboard nobody acts on is decoration. The real skill isn't setting up tracking — it's knowing which questions to ask, which metrics to surface, and how to make the data impossible to ignore.",
+          },
+        ],
+        secondaryAction: { label: "View resume", href: RESUME_PATH },
+      },
+    },
+    {
+      id: "more-ai-cms-publishing",
+      title: "AI-Powered CMS & Publishing System",
+      description:
+        "Custom CMS product requirements plus AI and automation — structured publishing, QA, RSS-driven briefs, and feedback from GSC/GA4 at 3.2M visitor scale.",
+      category: "CMS & AI",
+      badgeVariant: "lavender",
+      coverImage: "/featured/more-ai-cms-dashboard.png",
+      coverImageAlt:
+        "Content Management Dashboard UI: navigation, pending tasks, project stats, quota charts, and revenue analytics mockup",
+      modal: {
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
+        modalTags: [
+          "CMS",
+          "AI",
+          "Publishing",
+          "QA framework",
+          "RSS",
+          "SEO",
+          "GSC",
+          "GA4",
+          "Automation",
+        ],
+        blocks: [
+          {
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "At 3.2 million monthly visitors, content is infrastructure. One slow page costs traffic. One inconsistent article costs trust. One manual publishing bottleneck costs time the team doesn't have. I led the product requirements for a custom CMS built from the ground up — and layered AI and automation on top of it to make the entire content operation faster, smarter, and self-sustaining.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "The team was producing at volume but without a system. Publishing was slow, errors were frequent, quality was inconsistent, and every piece of fresh content required full manual effort. ",
+              },
+              {
+                text: "The CMS wasn't built for their workflow — the team was bending themselves to fit the tool.",
+                strong: true,
+              },
+              {
+                text: " Adding AI on top of a broken system would only make the mess faster.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "dashBullets",
+            heading: "What I discovered",
+            items: [
+              "Content teams using AI-enhanced CMS platforms spend 40% less time on administrative tasks — the bottleneck wasn't talent, it was tooling.",
+              "Publishing errors were happening because the CMS had no content-specific validation — wrong formats, missing metadata, broken SEO fields were only caught after publishing.",
+              "Quality assurance was manual and subjective — a framework with clear standards would raise the floor across all 100+ product pages instantly.",
+              "AI could automate the repetitive layer — RSS ingestion, metadata tagging, SEO suggestions — freeing the team for high-value editorial work.",
+            ],
+          },
+          { type: "divider" },
+          { type: "subheading", text: "The system I built" },
+          {
+            type: "richParagraph",
+            heading: "Content intake",
+            segments: [
+              { text: "RSS feed integration + AI topic surfacing", strong: true },
+              {
+                text: " — the system pulls live signals, identifies trending topics, and queues content briefs automatically.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Creation layer",
+            segments: [
+              { text: "Custom CMS with structured templates", strong: true },
+              {
+                text: " — purpose-built for the team's workflow, with SEO fields, metadata, and brand guidelines built into every content type.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Quality gate",
+            segments: [
+              { text: "Automated QA framework", strong: true },
+              {
+                text: " — content is checked against brand standards, SEO requirements, and accuracy benchmarks before it reaches the publish queue.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Publishing",
+            segments: [
+              { text: "Scheduled + automated publishing", strong: true },
+              {
+                text: " — content goes live at optimal times without manual intervention. The system handles formatting, tagging, and distribution.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Performance loop",
+            segments: [
+              { text: "GSC + GA4 feedback", strong: true },
+              {
+                text: " — traffic and ranking signals feed back into the content calendar, so the team always knows what to write next.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Impact",
+            stats: [
+              {
+                value: "60%",
+                label: "Faster publishing turnaround after CMS build",
+              },
+              {
+                value: "40%",
+                label: "Reduction in content errors post-QA framework",
+              },
+              {
+                value: "500K+",
+                label: "Incremental monthly organic visits driven by the system",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "AI doesn't fix broken processes — it amplifies them. The real work was building the right system first: the CMS, the QA framework, the feedback loops. Once the foundation was right, automation made everything compound. That's the correct order of operations.",
           },
         ],
         secondaryAction: { label: "View resume", href: RESUME_PATH },
