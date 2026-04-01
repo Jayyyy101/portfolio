@@ -102,10 +102,6 @@ export function WritingAccordion({ groups, comingSoon }: Props) {
       <div className="writing-section__groups">
         {groups.map((group) => (
           <div key={group.id} className="writing-section__group">
-            <div className="writing-section__group-head">
-              <h3 className="writing-section__group-title">{group.heading}</h3>
-              <span className="writing-section__group-line" aria-hidden />
-            </div>
             <div className="writing-cards">
               {group.cards.map((card) => (
                 <WritingCardBlock key={card.id} card={card} preview={comingSoon} />

@@ -243,9 +243,9 @@ export const localPortfolioData: PortfolioData = {
         primaryAction: { label: "View project", href: SOCIAL_LINKEDIN },
         secondaryAction: { label: "View document", href: RESUME_PATH },
       },
-      featuredImage: "/featured/linkedin-agent-phone-ai.png",
+      featuredImage: "/featured/linkedin-agent-n8n-workflow.png",
       featuredImageAlt:
-        "Phone showing LinkedIn logo against a circuit board with glowing AI chip",
+        "Automation workflow diagram: news ingestion, OpenAI structuring, router, LinkedIn org and user posts, with handwritten notes for gather news, structured data, post content, and publish",
       featuredImageFocus: "center",
     },
     {

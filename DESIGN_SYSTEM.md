@@ -42,8 +42,13 @@ Single reference for the current visual language. **Source of truth for tokens:*
 | `--gold-glow` | Gold-tinted fills (hover, outlines) |
 | `--gold-ring` / `--gold-ring-soft` | Pill / outline borders |
 | `--header-nav-muted` | Header + hero intro demotion |
+| `--rail-muted` | Fixed contact rail icons (until hover) |
+| `--accent-green` | About highlights + closing bar border |
+| `--gold-bright` | Hover text on gold controls (read more, modal primary, etc.) |
+| `--photo-matte` | Light background behind modal case imagery |
+| `--paper` / `--paper-soft` | White / off-white surfaces for institution seals and similar |
 
-**Semantic green (about highlights / closing bar):** `#2d8a69` — keep consistent for “highlight” meaning in About only unless you intentionally extend accent vocabulary.
+**Semantic green:** use `var(--accent-green)` for About highlights / closing bar only unless you intentionally extend that accent.
 
 ## Category / chip accents (data `variant`)
 
