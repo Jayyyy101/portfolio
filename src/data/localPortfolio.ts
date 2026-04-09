@@ -984,6 +984,283 @@ export const localPortfolioData: PortfolioData = {
       },
     },
     {
+      id: "more-amazon-seller-intelligence",
+      title: "Amazon Seller Intelligence — AI Agents Across PPC, Listings & Profit",
+      description:
+        "9.7 million sellers. One marketplace. Zero unified operating system. I designed the AI agent framework that changes that — across PPC, listings, inventory, and profitability.",
+      category: "AI Strategy",
+      badgeVariant: "mint",
+      coverImage: "/featured/more-amazon-seller-intelligence.jpg",
+      coverImageAlt:
+        "Laptop mockup showing an Amazon seller dashboard with AI-powered product detail suggestions and generated listing copy",
+      modal: {
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
+        modalTags: [
+          "Amazon",
+          "AI agents",
+          "PPC",
+          "Listings",
+          "Inventory",
+          "Profitability",
+          "TACoS",
+          "Marketplace strategy",
+        ],
+        blocks: [
+          {
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "Over 9.7 million sellers are registered on Amazon. Around 2 million compete actively every single day. The ones winning aren't working harder — they're operating smarter. I designed the product strategy for an AI-powered operating system that gives Amazon sellers and agencies a self-driving layer across PPC, listings, inventory, and profitability — so they can focus on growth instead of operations.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "Managing an Amazon business manually is a full-time job inside a full-time job. Bid adjustments, keyword research, listing optimisation, inventory tracking, profitability reporting — each one demands daily attention. Most tools automate individual tasks but treat them as separate problems. ",
+              },
+              {
+                text: "Nobody had built the operating system that connects them all.",
+                strong: true,
+              },
+              {
+                text: " The result: sellers are drowning in dashboards, agencies are burning out on execution, and the real strategic work never gets done.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "dashBullets",
+            heading: "What the market revealed",
+            items: [
+              "The Amazon PPC auction now moves in milliseconds — humans physically cannot adjust bids fast enough to compete with AI-powered competitors at scale.",
+              "Most \"AI\" PPC tools are rule engines in disguise — they adjust bids faster but can't reason about context, competition, or profitability simultaneously.",
+              "The real gap isn't automation — it's intelligence. Sellers need a system that understands why performance shifts, not just that it did.",
+              "Agencies managing 50+ brands spend 80% of time on execution and 20% on strategy — the inverse of where value is created.",
+              "TACoS — not ACoS — is the metric that actually matters. Most tools optimise for ad efficiency, missing the impact on organic rank and total revenue.",
+            ],
+          },
+          { type: "divider" },
+          { type: "subheading", text: "The product strategy — four agent layers" },
+          {
+            type: "richParagraph",
+            heading: "Advertising agent",
+            segments: [
+              {
+                text: "Real-time bid management, keyword discovery, negative targeting, dayparting, and budget allocation — optimised for TACoS, not just ACoS. Learns from performance patterns, competitor movements, and inventory levels simultaneously.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Listing agent",
+            segments: [
+              {
+                text: "Continuous listing optimisation — titles, bullets, A+ content, backend search terms — aligned with Amazon's Rufus AI and search algorithm signals. Flags suppressed ASINs and policy issues before they cost sales.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Inventory agent",
+            segments: [
+              {
+                text: "Demand forecasting, restock alerts, and pricing recommendations — connected to ad spend so the system never promotes a product that's about to go out of stock.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Profitability agent",
+            segments: [
+              {
+                text: "P&L visibility at the ASIN level — real-time reporting on revenue, ad spend, fees, and margin so every decision is made in the context of actual profit, not vanity metrics.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Market context",
+            stats: [
+              {
+                value: "9.7M",
+                label: "Registered Amazon sellers globally — the addressable market",
+              },
+              {
+                value: "8–12%",
+                label: "Optimal TACoS range — the metric most tools still don't optimise for",
+              },
+              {
+                value: "5 years",
+                label: "Until manual PPC agencies are extinct — per industry experts in 2025",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "The Amazon seller problem is a marketplace problem — exactly the kind I've been solving. Discovery, taxonomy, automation, conversion — the principles don't change, only the domain does. The sellers who win aren't the ones with the best products. They're the ones with the best operating system behind them.",
+          },
+        ],
+        secondaryAction: { label: "View resume", href: RESUME_PATH },
+      },
+    },
+    {
+      id: "more-voice-ai-sales-automation",
+      title: "Voice AI Sales Automation — From First Call to Qualified Pipeline",
+      description:
+        "Enterprise sales teams stop following up too early. Leads go cold. Deals die quietly. I designed the Voice AI agent framework that fixes all three — automatically.",
+      category: "AI Strategy",
+      badgeVariant: "lavender",
+      coverImage: "/featured/more-voice-ai-sales-automation.jpg",
+      coverImageAlt:
+        "Voice AI agents banner with support representative illustration, headset iconography, and customer support automation theme",
+      modal: {
+        overview: "",
+        details: "",
+        hideTopMetrics: true,
+        modalTags: [
+          "Voice AI",
+          "Sales automation",
+          "Lead qualification",
+          "Outbound",
+          "CRM",
+          "BANT",
+          "Routing",
+          "Pipeline",
+        ],
+        blocks: [
+          {
+            type: "richParagraph",
+            heading: "Overview",
+            segments: [
+              {
+                text: "Enterprise sales teams spend most of their time on the wrong things — chasing unresponsive leads, logging calls manually, and following up inconsistently. The top of the funnel is broken not because of bad leads, but because humans can't scale the repetitive work of qualification at speed. I designed the product framework for a Voice AI agent system that handles outbound calling, lead qualification, and follow-up automation — so sales teams only spend time on conversations that are already warm.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "richParagraph",
+            heading: "The problem",
+            segments: [
+              {
+                text: "93% of converted leads require 6 or more contact attempts. Most sales teams stop after 2 or 3. The math is simple — but the execution is brutal. Reps burn out on repetitive outreach. Leads go cold because follow-up is inconsistent. And the CRM is always out of date because nobody has time to log everything. ",
+              },
+              {
+                text: "The bottleneck isn't strategy. It's volume, consistency, and speed of contact.",
+                strong: true,
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "dashBullets",
+            heading: "What the market revealed",
+            items: [
+              "Voice AI agents achieve 30-40% contact rates on outbound — significantly higher than manual dialling, because the system calls at the right time, every time.",
+              "Teams using Voice AI see a 35% surge in qualified meetings — not because of more calls, but because every call follows a consistent qualification framework.",
+              "Calls between 4-5 PM are 71% more successful than morning calls — something an AI agent can optimise automatically, something humans rarely do consistently.",
+              "The Voice AI market is growing from $2.4B in 2024 to $47.5B by 2034 — enterprise adoption is still early, which means the competitive advantage window is now.",
+              "Gartner forecasts AI will reduce contact centre labour costs by $80B globally by 2026 — enterprises that deploy early capture the margin, not just the efficiency.",
+            ],
+          },
+          { type: "divider" },
+          { type: "subheading", text: "The agent workflow I designed" },
+          {
+            type: "richParagraph",
+            heading: "Lead ingestion",
+            segments: [
+              {
+                text: "CRM sync + lead scoring — agent pulls fresh leads automatically, prioritises by intent signals, and queues outbound calls without manual input.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Outbound calling",
+            segments: [
+              {
+                text: "Natural language conversation — agent introduces, qualifies, and handles objections in real-time. Adapts tone and pace based on prospect response — not a rigid script.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Qualification layer",
+            segments: [
+              {
+                text: "Budget · Authority · Need · Timeline — structured BANT qualification on every call, consistently. No rep fatigue, no missed questions, no subjective scoring.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Hot lead routing",
+            segments: [
+              {
+                text: "Instant handoff to human rep — qualified leads are routed immediately with full call context, transcript, and qualification score. Reps start closing, not discovering.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "Follow-up automation",
+            segments: [
+              {
+                text: "Multi-touch persistence — agent calls back 6-8 times across different days and times, automatically. No lead goes cold because someone forgot to follow up.",
+              },
+            ],
+          },
+          {
+            type: "richParagraph",
+            heading: "CRM logging",
+            segments: [
+              {
+                text: "Automatic sync post-call — transcripts, qualification scores, next steps, and buying signals logged instantly. The CRM is always accurate, always up to date.",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "statGrid",
+            heading: "Market context",
+            stats: [
+              {
+                value: "$47.5B",
+                label: "Voice AI market by 2034 — growing at 34.8% CAGR",
+              },
+              {
+                value: "35%",
+                label: "Surge in qualified meetings for teams using Voice AI agents",
+              },
+              {
+                value: "$80B",
+                label: "Contact centre cost reduction forecast by Gartner by 2026",
+              },
+            ],
+          },
+          { type: "divider" },
+          {
+            type: "pullQuote",
+            heading: "What this taught me",
+            quote:
+              "The best Voice AI deployments don't sound like bots — they sound like the best version of your sales process. The prompt logic, the qualification framework, the handoff trigger — these are product decisions, not engineering ones. Getting them right is the difference between an agent that converts and one that just makes calls.",
+          },
+        ],
+        secondaryAction: { label: "View resume", href: RESUME_PATH },
+      },
+    },
+    {
       id: "more-1",
       title: "Tractor Junction — From Content to Product Thinking",
       description:
